@@ -375,7 +375,7 @@
 
 
 \begin{document}
-\[\[\[\[%
+%
 % paper title
 % Titles are generally capitalized except for words such as a, an, and, as,
 % at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
@@ -544,14 +544,14 @@ Make sure that by the end of your introduction the reader knows what your projec
 
 
 
-\subsection{Subsection Heading Here}
-Occasionally you need to break your sections into separate parts, you will likely not need a subsection for every section
+% \subsection{Subsection Heading Here}
+% Occasionally you need to break your sections into separate parts, you will likely not need a subsection for every section
 
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
 
-\subsubsection{Subsubsection Heading Here}
-Occasionally you will need to break your subsections into separate parts, if you find yourself using this often, you're likely going overboard.  Don't try to go any lower down than this...
+% \subsubsection{Subsubsection Heading Here}
+% Occasionally you will need to break your subsections into separate parts, if you find yourself using this often, you're likely going overboard.  Don't try to go any lower down than this...
 
 
 % An example of a floating figure using the graphicx package.
@@ -674,10 +674,10 @@ As part of fleshing out the scope of your requirements, you'll also need to keep
 \item you'll typically have fewer non-functional than functional requirements
 \end{itemize}
 
-\subsection{Use Cases}
-This subsection is arguably part of how you define your project scope (why it is in the Scope section...).  In a traditional Waterfall approach, as part of your requirements gathering phase (what does the product actually \emph{need} to do?), you will typically sit down with a user to develop use cases.
+% \subsection{Use Cases}
+% This subsection is arguably part of how you define your project scope (why it is in the Scope section...).  In a traditional Waterfall approach, as part of your requirements gathering phase (what does the product actually \emph{need} to do?), you will typically sit down with a user to develop use cases.
 
-You should have a table listing all use cases discussed in the document, the ID is just the order it is listed in, the name should be indicative of what should happen, the primary actor is typically most important in an application where you may have different levels of users (think admin vs normal user), complexity is a best-guess on your part as to how hard it should be.  A lower number in priority indicates that it needs to happen sooner rather than later.  A sample table, or Use Case Index can be seen in Table \ref{tab:useCaseIndex}.
+% You should have a table listing all use cases discussed in the document, the ID is just the order it is listed in, the name should be indicative of what should happen, the primary actor is typically most important in an application where you may have different levels of users (think admin vs normal user), complexity is a best-guess on your part as to how hard it should be.  A lower number in priority indicates that it needs to happen sooner rather than later.  A sample table, or Use Case Index can be seen in Table \ref{tab:useCaseIndex}.
 
 
 
@@ -724,9 +724,9 @@ Alternative: Item already exists in the cart
 \item[Termination Outcome:] The user now has multiple instances of the item in their cart.
 \end{enumerate}
 
-You will often also need to include pictures or diagrams.  It is quite common to see use-case diagrams in such write-ups.  To properly reference an image, you will need to use the \texttt{figure} environment and will need to reference it in your text (via the \texttt{ref} command) (see Figure \ref{cat1}).  NOTE: this is not a use case diagram, but a kitten.
+% You will often also need to include pictures or diagrams.  It is quite common to see use-case diagrams in such write-ups.  To properly reference an image, you will need to use the \texttt{figure} environment and will need to reference it in your text (via the \texttt{ref} command) (see Figure \ref{cat1}).  NOTE: this is not a use case diagram, but a kitten.
 
-After fully describing a use case, it is time to move on to the next use case:
+% After fully describing a use case, it is time to move on to the next use case:
 
 \begin{itemize}
 \item[Use Case Number:] 2
@@ -735,48 +735,48 @@ After fully describing a use case, it is time to move on to the next use case:
 
 \end{itemize}
 
-You will then need to continue to flesh out all use cases you have identified for your project.
+% You will then need to continue to flesh out all use cases you have identified for your project.
 
 \begin{figure}[ht!]
-\includegraphics[height=250px, width=350px]{cat1.jpg}
-\caption{First picture, this is a kitten, not a use case diagram}
-\label{cat1}
+% \includegraphics[height=250px, width=350px]{cat1.jpg}
+% \caption{First picture, this is a kitten, not a use case diagram}
+% \label{cat1}
 \end{figure}
 
 \subsection{Interface Mockups}
-At first, this will largely be completely made up, as you get further along in your project, and closer to a final product, this will typically become simple screenshots of your running application.
+% At first, this will largely be completely made up, as you get further along in your project, and closer to a final product, this will typically become simple screenshots of your running application.
 
-In this subsection, you will be showing what the screen should look like as the user moves through various use cases (make sure to tie the interface mockups back to the specific use cases they illustrate).
+% In this subsection, you will be showing what the screen should look like as the user moves through various use cases (make sure to tie the interface mockups back to the specific use cases they illustrate).
 
 
 
 \section{Project Timeline}
-Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
+% Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
 
 \section{Project Structure}
-At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
+% At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
 
 \subsection{UML Outline}
 Show the full structure of your program.  Make sure to keep on updating this section as your project evolves (you often start out with one plan, but end up modifying things as you move along).  As a note, while Dia fails miserably at generating pdfs (probably my fault), I have had much success with png files.  Make sure to wrap your images in a \texttt{figure} environment, and to reference with the \texttt{ref} command.  For example, see Figure \ref{cat2}.
 
 \begin{figure}[ht!]
-\includegraphics[scale=1.5]{cat2.jpg}
-\caption{Your figures should be in the \emph{figure} environment, and have captions.  Should also be of diagrams pertaining to your project, not random internet kittens}
-\label{cat2}
+% \includegraphics[scale=1.5]{cat2.jpg}
+% \caption{Your figures should be in the \emph{figure} environment, and have captions.  Should also be of diagrams pertaining to your project, not random internet kittens}
+% \label{cat2}
 \end{figure}
 
 
 \subsection{Design Patterns Used}
-Make sure to actually use at least 2 design patterns from this class.  This is not normally part of such documentation, but largely just specific to this class -- I want to see you use the patterns!
+% Make sure to actually use at least 2 design patterns from this class.  This is not normally part of such documentation, but largely just specific to this class -- I want to see you use the patterns!
 
 
 \section{Results}
-This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
+% This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
 
 \subsection{Future Work}
-Where are you going next with your project?
-For early deliverables, what are your next steps?  (HINT: you will typically want to look back at your timeline and evaluate: did you meet your expected goals?  Are you ahead of schedule?  Did you decide to shift gears and implement a new feature?)
-By the end, what do you plan on doing with this project?  Will you try to sell it?  Set it on fire?  Link to it on your resume and forget it exists?
+% Where are you going next with your project?
+% For early deliverables, what are your next steps?  (HINT: you will typically want to look back at your timeline and evaluate: did you meet your expected goals?  Are you ahead of schedule?  Did you decide to shift gears and implement a new feature?)
+% By the end, what do you plan on doing with this project?  Will you try to sell it?  Set it on fire?  Link to it on your resume and forget it exists?
 
 
 
@@ -909,8 +909,5 @@ Biography text here.
 
 
 % that's all folks
-\]
-\]
-\]
-\]
+
 \end{document}
