@@ -474,7 +474,7 @@
 % in the abstract or keywords.
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-With this program we wish to provide an inventory management system that can be used by a variety of consumers such as commercial retailers and warehouses.  The program will provide different features depending on who is using it. For example if the program is being used by a distribution warehouse the user will probably want to track where outgoing products are going, while a retail store would just like to note how much the product was sold for. This 
+With this program we wish to provide an inventory management system that can be used by a variety of consumers such as commercial retailers and warehouses.  The program will provide some basic different functionality depending on who is using it. For example, some information needed to be stored may about the inventory may change from different consumers, so the consumer will be able to store specific information on their inventory through some methods that will eventually be provided by the program.
 \end{abstract}
 
 %As the comment below states, you usually only do these when you're doing a final submission of a paper, to make it easier to find your work when searching.
@@ -535,12 +535,12 @@ With this program we wish to provide an inventory management system that can be 
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-With this program we want to help the user track the contents of their inventory as efficiently as we can and provide features to aid them. This means we will have a user specific database filled with the user's inventory and information provided by the user, such as what the inventory is for. This program will be designed with the intention of being usable by virtually anyone who has an inventory to manage. While the program will provided specialized features for things such as restaurants, warehouses, and retail stores, there will also be a basic set of features for those cases we do not have the time or imagination to account for. This means that hopefully any user will be able to manage any sort of inventory in a simple and efficient manner.
+With this program we want to help the user track the contents of their inventory as efficiently as we can and provide features to aid them. This means we will have a user specific database filled with the user's inventory and information provided by the user, such as what the inventory is for. This program will be designed with the intention of being usable by virtually anyone who has an inventory to manage. While the program will provided specialized features (which may be things easily set up by the consumer) for things such as restaurants, warehouses, and retail stores; a basic set of features for those cases we do not have the time or imagination to account for. This means that hopefully any user will be able to manage any sort of inventory in a simple and efficient manner.
 
-Should you need to cite anything, use the \emph{cite} keyword, and refer to something from your bibliography.  For example, this was put together with the help of a \LaTeX guide\cite{IEEEhowto:kopka}.
+% Should you need to cite anything, use the \emph{cite} keyword, and refer to something from your bibliography.  For example, this was put together with the help of a \LaTeX guide\cite{IEEEhowto:kopka}.
 
 
-Make sure that by the end of your introduction the reader knows what your project is and why you are doing it.
+% Make sure that by the end of your introduction the reader knows what your project is and why you are doing it.
 
 
 
@@ -650,22 +650,22 @@ Make sure that by the end of your introduction the reader knows what your projec
 % \fnbelowfloat command of the stfloats package.
 
 \subsection{Background}
-The main reason we decided to do this program is we thought but on all the similar program we had done in the past and wondered if we could adapt the idea behind some of them into a useable end product. We also thought of all the places that still use ineffective methods to keep track of their inventory due to fear of technology or the misguided view that modernizing would be too expensive.
+The main reason we decided to do this program is we thought but on all the similar program we had done in the past and wondered if we could adapt the idea behind some of them into a usable end product. We also thought of all the places that still use ineffective methods to keep track of their inventory due to fear of technology or the misguided view that modernizing would be too expensive.
 
 \subsection{Challenges}
-Two of the biggest problems we anticipate are dealing with working with the databases and the login procedure. We'll need the login procedure to store what the client has in their inventory and what kind of inventory they have. The databases are sort of an x factor here as since neither of us have extensive experience with databases, so we're not really sure what to expect. 
+Two of the biggest problems we anticipate are dealing with working with the databases and the login procedure. Since we plan to use a login, We'll need the login procedure to store what the client has in their inventory and what kind of inventory they have. The databases are sort of an x factor here as since neither of us have extensive experience with databases, so we're not really sure what to expect. 
 
 
 \section{Scope}
-As a minimum, we would like the program to be able to track the inventory, list its contents, keep data on, and add and take things away from the inventory as well. Then we will add in some features specialized for retail stores, including tracking profits and the dates items were received. There will also be some features specialized for warehouses, like tracking where and when items are being shipped. As a stretch goal we would like to add in features specialized for a library, such as tracking who has what book and when they should return it. As another stretch goal we would like to add a basic setting screen to change simple things such as text size and background color.
+As a minimum, we would like the program to be able to track the inventory, list its contents, be able to manage some sort of data on the inventory, and add and take things away from the inventory as well. As a stretch goal, we will add in some features specialized for retail stores, including tracking profits and the dates items were received. There will also be some features specialized for warehouses, like tracking where and when items are being shipped. Finally, we would like to add in features specialized for a library, such as tracking who has what book and when they should return it. As another stretch goal we would like to add a basic setting screen to change simple things such as text size and background color.
 \subsection{Requirements}
-As part of fleshing out the scope of your requirements, you'll also need to keep in mind both your functional and non-functional requirements.  These should be listed, and explained in detail as necessary.  Use this area to explain how you gathered these requirements.
+% As part of fleshing out the scope of your requirements, you'll also need to keep in mind both your functional and non-functional requirements.  These should be listed, and explained in detail as necessary.  Use this area to explain how you gathered these requirements.
 
 \subsubsection{Functional}
 \begin{itemize}
-\item User needs to have a private shopping cart -- this cannot be shared between users, and needs to maintain state across subsequent visits to the site
-\item Users need to have website accounts -- this will help track recent purchases, keep shopping cart records, etc.
-\item You'll need more than 2 of these...
+\item User needs to have a private inventory -- this cannot be shared between users, and needs to maintain state across subsequent visits to the site.
+\item Users need to have website accounts -- this will help keep an online database and keep track of inventory with details.
+\item Needs to have a place with sufficient capacity to record all required information, and reliably store it in a database.
 \end{itemize}
 
 \subsubsection{Non-Functional}
@@ -674,7 +674,7 @@ As part of fleshing out the scope of your requirements, you'll also need to keep
 \item you'll typically have fewer non-functional than functional requirements
 \end{itemize}
 
-% \subsection{Use Cases}
+\subsection{Use Cases}
 % This subsection is arguably part of how you define your project scope (why it is in the Scope section...).  In a traditional Waterfall approach, as part of your requirements gathering phase (what does the product actually \emph{need} to do?), you will typically sit down with a user to develop use cases.
 
 % You should have a table listing all use cases discussed in the document, the ID is just the order it is listed in, the name should be indicative of what should happen, the primary actor is typically most important in an application where you may have different levels of users (think admin vs normal user), complexity is a best-guess on your part as to how hard it should be.  A lower number in priority indicates that it needs to happen sooner rather than later.  A sample table, or Use Case Index can be seen in Table \ref{tab:useCaseIndex}.
@@ -688,40 +688,47 @@ As part of fleshing out the scope of your requirements, you'll also need to keep
 \hline
 Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \hline \hline
-1 & Add item to cart & Shopper & Med & 1\\
+1 & Basic Inventory & Admin & Hard & 1\\
 \hline
-2 & Checkout & Shopper & Med & 1\\
+2 & Retail Inventory & Admin & Med & 2\\
+\hline
+3 & Warehouse Inventory & Admin & Med & 2\\
+\hline
+4 & Library Inventory & Admin & Med & 2\\
+\hline
+5 & Visual Settings/Appeal & Normal User & Easy & 3\\
 \hline
 
+
 \end{tabular}
-\caption{Sample use case table}
+\caption{Inventory Program Use Cases}
 \label{tab:useCaseIndex}
 \end{table}
 
 
 \begin{itemize}
 \item[Use Case Number:] 1
-\item[Use Case Name:] Add item to cart
-\item[Description:] A shopper on our site has identified an item they wish to buy.  They will click on a ``Add to Cart" button.  This will kick off a process to add one instance of the item to their cart.
+\item[Use Case Name:] Basic inventory
+\item[Description:] A user wants to set up an inventory that requires a login to access and contains basic information about the inventory, minimally including quantity and a way of giving a brief description of an item.
 \end{itemize}
 
 You will then go on to (minimally) discuss a basic flow for the process:
 
 \begin{enumerate}
-\item User navigates to page listing desired item
-\item User left-clicks on ``Add to Cart" button.
-\item User cart is updated to reflect the new item, this also updates the current total.
-\item[Termination Outcome:] The user now has a single instance of the item in their cart.
+\item User downloads/runs program and selects options to set up his account/inventory.
+\item User adds inventory through a method(?).
+\item User inventory is updated to reflect new items, this also updates the current total.
+\item[Termination Outcome:] The user now has a inventory of items updated and modified through the program.
 \end{enumerate}
 
 You may need to also add in any alternative flows:
 
-Alternative: Item already exists in the cart
+Alternative: Item already exists in the inventory
 \begin{enumerate}
-\item User navigates to page listing desired item
-\item User left-clicks on ``Add to Cart" button.
-\item User cart is updated to reflect the new item, showing that one more instance of the existing item has been added.  This also updates the current total.
-\item[Termination Outcome:] The user now has multiple instances of the item in their cart.
+\item User navigates to page detailing the item already exists in inventory
+\item User updates information if necessary on item in inventory.
+\item User inventory is updated to reflect the new item's details, displaying any worthy information about that item.
+\item[Termination Outcome:] The user now has a inventory of items updated and modified through the program.
 \end{enumerate}
 
 % You will often also need to include pictures or diagrams.  It is quite common to see use-case diagrams in such write-ups.  To properly reference an image, you will need to use the \texttt{figure} environment and will need to reference it in your text (via the \texttt{ref} command) (see Figure \ref{cat1}).  NOTE: this is not a use case diagram, but a kitten.
@@ -730,12 +737,24 @@ Alternative: Item already exists in the cart
 
 \begin{itemize}
 \item[Use Case Number:] 2
-\item[Use Case Name:] Checkout
-\item[Description:] A shopper on our site has finished shopping.  They will click on a ``Checkout" button.  This will kick off a process to calculate cart total, any taxes, shipping rates, and collect payment from the shopper.
-
+\item[Use Case Name:] Retail Inventory
+\item[Description:] An inventory database for a retail store. For example, it will have specialized features such as the ability to have a shopping cart and checkout methods that can automatically add and take away from the inventory database.
 \end{itemize}
 
 % You will then need to continue to flesh out all use cases you have identified for your project.
+
+\begin{itemize}
+\item[Use Case Number:] 5
+\item[Use Case Name:] Visual Settings/Appeal
+\item[Description:] The user may change visual settings to make the program more usable or appealing.
+\end{itemize}
+
+\begin{enumerate}
+\item User navigates to a settings page.
+\item User changes to desired visual appeals.
+\item Program visuals are updated to reflect the desired visual changes for the program.
+\end{enumerate}
+
 
 \begin{figure}[ht!]
 % \includegraphics[height=250px, width=350px]{cat1.jpg}
@@ -757,7 +776,7 @@ Alternative: Item already exists in the cart
 % At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
 
 \subsection{UML Outline}
-Show the full structure of your program.  Make sure to keep on updating this section as your project evolves (you often start out with one plan, but end up modifying things as you move along).  As a note, while Dia fails miserably at generating pdfs (probably my fault), I have had much success with png files.  Make sure to wrap your images in a \texttt{figure} environment, and to reference with the \texttt{ref} command.  For example, see Figure \ref{cat2}.
+% Show the full structure of your program.  Make sure to keep on updating this section as your project evolves (you often start out with one plan, but end up modifying things as you move along).  As a note, while Dia fails miserably at generating pdfs (probably my fault), I have had much success with png files.  Make sure to wrap your images in a \texttt{figure} environment, and to reference with the \texttt{ref} command.  For example, see Figure \ref{cat2}.
 
 \begin{figure}[ht!]
 % \includegraphics[scale=1.5]{cat2.jpg}
