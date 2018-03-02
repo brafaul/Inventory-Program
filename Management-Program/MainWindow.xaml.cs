@@ -24,5 +24,12 @@ namespace Management_Program
         {
             InitializeComponent();
         }
+
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow log = new LoginWindow();
+            log.Owner = this;
+            log.ShowDialog();
+        }
     }
 }
