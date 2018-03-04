@@ -30,6 +30,10 @@ namespace Management_Program
             LoginWindow log = new LoginWindow();
             log.Owner = this;
             log.ShowDialog();
+            if (log.DialogResult.HasValue && log.DialogResult.Value)
+                MessageBox.Show("Logged in");
+            else
+                this.Close();
         }
     }
 }
