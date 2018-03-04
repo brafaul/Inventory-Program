@@ -31,7 +31,7 @@ namespace Management_Program
             log.Owner = this;
             log.ShowDialog();
             if (log.DialogResult.HasValue && log.DialogResult.Value)
-                MessageBox.Show("Logged in");
+                MessageBox.Show("Logged in as " + log.Username);
             else
                 this.Close();
         }

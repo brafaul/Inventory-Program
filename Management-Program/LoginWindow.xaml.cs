@@ -19,8 +19,8 @@ namespace Management_Program
     /// </summary>
     public partial class LoginWindow : Window
     {
-        string Password;
-        string Username;
+        public string Password;
+        public string Username;
         public LoginWindow()
         {
             InitializeComponent();
