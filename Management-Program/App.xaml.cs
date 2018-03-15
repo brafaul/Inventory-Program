@@ -13,5 +13,6 @@ namespace Management_Program
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

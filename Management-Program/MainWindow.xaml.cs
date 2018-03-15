@@ -20,6 +20,7 @@ namespace Management_Program
     /// </summary>
     public partial class MainWindow : Window
     {
+        TDatabase database = new TDatabase();
         public MainWindow()
         {
             InitializeComponent();
@@ -31,9 +32,43 @@ namespace Management_Program
             log.Owner = this;
             log.ShowDialog();
             if (log.DialogResult.HasValue && log.DialogResult.Value)
-                MessageBox.Show("Logged in as " + log.Username);
+            {
+                MessageBox.Show("Welcome " + log.Username);
+                UserBox.Text = "Logged in as " + log.Username;
+            }
             else
                 this.Close();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindow add = new AddWindow();
+            add.Owner = this;
+            add.ShowDialog();
+            if(add.DialogResult.HasValue && add.DialogResult.Value)
+            {
+                database.AddObject(add.N, add.Amount, add.ID);
+                MessageBox.Show("Item " + add.N + " has been added");
+            }
+        }
+        private void Remove_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Modify_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void List_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exit_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

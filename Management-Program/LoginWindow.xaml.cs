@@ -45,7 +45,6 @@ namespace Management_Program
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
-            MessageBox.Show(Username + " " + Password);
         }
     }
 }
