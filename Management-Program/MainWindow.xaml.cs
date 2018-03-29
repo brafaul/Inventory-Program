@@ -42,12 +42,12 @@ namespace Management_Program
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddWindow add = new AddWindow();
+            AddWindow add = new AddWindow(database);
             add.Owner = this;
             add.ShowDialog();
             if(add.DialogResult.HasValue && add.DialogResult.Value)
             {
-                database.AddObject(add.N, add.Amount, add.ID);
+                database = add.database;
                 MessageBox.Show("Item " + add.N + " has been added");
             }
         }
@@ -63,7 +63,9 @@ namespace Management_Program
 
         private void List_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ListWindow lis = new ListWindow(database);
+            lis.Owner = this;
+            lis.Show();
         }
 
         private void Exit_Button_Click(object sender, RoutedEventArgs e)

@@ -19,6 +19,7 @@ namespace Management_Program
     /// </summary>
     public partial class AddWindow : Window
     {
+        public TDatabase database;
         public string N;
         public int Amount;
         public int ID;
@@ -29,7 +30,11 @@ namespace Management_Program
         {
             InitializeComponent();
         }
-
+        public AddWindow(TDatabase D)
+        {
+            database = D;
+            InitializeComponent();
+        }
         private void NameBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             N = NameBox.Text;
@@ -46,6 +51,7 @@ namespace Management_Program
             if(NameCheck == true && AmountCheck == true && IDCheck == true)
             {
                 DialogResult = true;
+                database.AddObject(N, Amount, ID);
                 this.Close();
             }
             else

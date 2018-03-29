@@ -21,10 +21,18 @@ namespace Management_Program
         {
             return Name;
         }
+        public int GetAmount()
+        {
+            return Amount;
+        }
+        public int GetID()
+        {
+            return ID;
+        }
     }
     public class TDatabase
     {
-        List<DatabaseObject> Inventory;
+        private List<DatabaseObject> Inventory;
         public TDatabase()
         {
             Inventory = new List<DatabaseObject>();
