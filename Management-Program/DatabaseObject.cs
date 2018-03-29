@@ -10,8 +10,8 @@ namespace Management_Program
     {
         string Name;
         int Amount;
-        int ID;
-       public DatabaseObject(string N, int A, int I)
+        string ID;
+       public DatabaseObject(string N, int A, string I)
         {
             Name = N;
             Amount = A;
@@ -25,7 +25,7 @@ namespace Management_Program
         {
             return Amount;
         }
-        public int GetID()
+        public string GetID()
         {
             return ID;
         }
@@ -41,7 +41,7 @@ namespace Management_Program
         {
             return Inventory[index];
         }
-        public void AddObject(string N, int A, int I)
+        public void AddObject(string N, int A, string I)
         {
             Inventory.Add( new DatabaseObject(N, A, I));
         }

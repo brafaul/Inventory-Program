@@ -38,8 +38,9 @@ namespace Management_Program
                 current = null;
                 current = database.GetElement(i).GetName() + " ";
                 current = current + database.GetElement(i).GetAmount() + " ";
-                current = current + database.GetElement(i).GetID();
+                current = current + database.GetElement(i).GetID() +  " " + "<LineBreak />";//Need to try and find way to seperate into lines
                 ListBlock.Inlines.Add(current);
+                ListBlock.Inlines.Add(new Line());
             }
         }
 

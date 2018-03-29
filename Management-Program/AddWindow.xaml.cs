@@ -22,7 +22,7 @@ namespace Management_Program
         public TDatabase database;
         public string N;
         public int Amount;
-        public int ID;
+        public string ID;
         bool NameCheck = false;
         bool AmountCheck = false;
         bool IDCheck = false;
@@ -37,7 +37,6 @@ namespace Management_Program
         }
         private void NameBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            N = NameBox.Text;
             NameCheck = true;
         }
         private void CancelButton_Click(object sender, RoutedEventArgs e)
@@ -50,6 +49,14 @@ namespace Management_Program
         {
             if(NameCheck == true && AmountCheck == true && IDCheck == true)
             {
+                N = NameBox.Text;
+                string ATemp = AmountBox.Text;
+                bool result = int.TryParse(ATemp, out Amount);
+                if(result == false)
+                {
+                    MessageBox.Show("Invalid Amount");
+                }
+                ID = NumBox.Text;
                 DialogResult = true;
                 database.AddObject(N, Amount, ID);
                 this.Close();
@@ -61,15 +68,11 @@ namespace Management_Program
         }
         private void AmountBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string temp = AmountBox.Text;
-            Amount = int.Parse(temp);
             AmountCheck = true;
         }
 
         private void NumBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string temp = NumBox.Text;
-            ID = int.Parse(temp);
             IDCheck = true;
         }
     }
