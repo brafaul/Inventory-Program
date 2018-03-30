@@ -77,19 +77,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="DatabaseObject.cs" />
     <Compile Include="ListWindow.xaml.cs">
       <DependentUpon>ListWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LoginWindow.xaml.cs">
-      <DependentUpon>LoginWindow.xaml</DependentUpon>
-=======
+  <Compile Include="LoginWindow.xaml.cs">
+    <DependentUpon>LoginWindow.xaml</DependentUpon>
+  </Compile>
     <Compile Include="DatabaseTestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseTestDataSet.xsd</DependentUpon>
->>>>>>> database
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
