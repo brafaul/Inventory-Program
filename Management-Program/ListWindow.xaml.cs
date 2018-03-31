@@ -33,14 +33,15 @@ namespace Management_Program
 
         private void ListButton_Click(object sender, RoutedEventArgs e)
         {
+            ListBlock.Inlines.Add("Name Amount ID" + '\n');
             for(int i = 0; i < database.Size(); i++)
             {
+                //Generates each line and adds into the the text block
                 current = null;
                 current = database.GetElement(i).GetName() + " ";
                 current = current + database.GetElement(i).GetAmount() + " ";
-                current = current + database.GetElement(i).GetID() +  " " + "<LineBreak />";//Need to try and find way to seperate into lines
+                current = current + database.GetElement(i).GetID() +  '\n';
                 ListBlock.Inlines.Add(current);
-                ListBlock.Inlines.Add(new Line());
             }
         }
 
