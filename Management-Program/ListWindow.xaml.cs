@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Name: ListWindow.xaml.cs
+//Purpose: List out all the database objects to the window
+//Author: Brayden Faulkner
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

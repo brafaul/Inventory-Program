@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Name: LoginWindow.xaml.cs
+//Purpose: Adds interaction logic for the login page
+//Author: Brayden Faulkner
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
