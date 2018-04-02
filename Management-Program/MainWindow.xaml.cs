@@ -41,6 +41,7 @@ namespace Management_Program
             {
                 MessageBox.Show("Welcome " + log.Username);
                 UserBox.Text = "Logged in as " + log.Username;
+                BlockBuild();
             }
             else
                 this.Close();
@@ -55,6 +56,7 @@ namespace Management_Program
             {
                 database = add.database;
                 MessageBox.Show("Item " + add.N + " has been added");
+                BlockBuild();
             }
         }
         private void Remove_Button_Click(object sender, RoutedEventArgs e)
@@ -63,6 +65,7 @@ namespace Management_Program
             rem.Owner = this;
             rem.ShowDialog();
             database = rem.database;
+            BlockBuild();
         }
 
         private void Modify_Button_Click(object sender, RoutedEventArgs e)
@@ -72,9 +75,9 @@ namespace Management_Program
 
         private void List_Button_Click(object sender, RoutedEventArgs e)
         {
-            ListWindow lis = new ListWindow(database);
-            lis.Owner = this;
-            lis.Show();
+            //This just updates the list in the case an unforseen circumstance
+            //Makes the user think it is not correct
+            BlockBuild();
         }
 
         private void Exit_Button_Click(object sender, RoutedEventArgs e)
