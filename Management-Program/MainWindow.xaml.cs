@@ -53,7 +53,10 @@ namespace Management_Program
         }
         private void Remove_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            RemoveWindow rem = new RemoveWindow(database);
+            rem.Owner = this;
+            rem.ShowDialog();
+            database = rem.database;
         }
 
         private void Modify_Button_Click(object sender, RoutedEventArgs e)

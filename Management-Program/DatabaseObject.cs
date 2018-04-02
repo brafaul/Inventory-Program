@@ -54,14 +54,26 @@ namespace Management_Program
         {
             Inventory.RemoveAt(index);
         }
+        public void RemoveByName(string N)
+        {
+            Inventory.RemoveAt(FindIndexName(N));
+        }
         public int FindIndexName(string N)
         {
             int i = 0;
-            while(Inventory[i].GetName() != N)
+            while(i < Size())
             {
-                i++;
+                if(N == GetElement(i).GetName())
+                {
+                    return i;
+                }
+                else
+                {
+                    i++;
+                }
             }
-            return i;
+            return -1;
+
         }
         public int Size()
         {
