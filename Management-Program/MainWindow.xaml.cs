@@ -21,6 +21,12 @@ namespace Management_Program
     public partial class MainWindow : Window
     {
         TDatabase database = new TDatabase();
+        public void BlockBuild()
+        {
+            BlockField block = new BlockField(ListBlock);
+            BlockDecorator dec = new BlockDecorator(block, database);
+            ListBlock = dec.Draw();
+        }
         public MainWindow()
         {
             InitializeComponent();

@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BlockDecorator.cs" />
+    <Compile Include="BlockField.cs" />
+    <Compile Include="BlockWidget.cs" />
     <Compile Include="RemoveWindow.xaml.cs">
       <DependentUpon>RemoveWindow.xaml</DependentUpon>
     </Compile>
