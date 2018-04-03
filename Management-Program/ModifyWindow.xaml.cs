@@ -28,5 +28,15 @@ namespace Management_Program
         {
 
         }
+
+        private void ATBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

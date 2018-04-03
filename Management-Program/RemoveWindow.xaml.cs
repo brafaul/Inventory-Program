@@ -36,6 +36,7 @@ namespace Management_Program
         }
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
+            DialogResult = false;
             this.Close();
         }
 
@@ -43,6 +44,7 @@ namespace Management_Program
         {
             if(NameCheck == true)
             {
+                DialogResult = true;
                 RemName = RemNameBox.Text;
                 database.RemoveByName(RemName);
                 this.Close();

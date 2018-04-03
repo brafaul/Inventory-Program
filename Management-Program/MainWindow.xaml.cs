@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Name:MainWindow.xaml.cs
+//Purpose: Establishes back logic for main window 
+//Author: Brayden Faulkner
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,8 +67,11 @@ namespace Management_Program
             RemoveWindow rem = new RemoveWindow(database);
             rem.Owner = this;
             rem.ShowDialog();
-            database = rem.database;
-            BlockBuild();
+            if (rem.DialogResult.HasValue && rem.DialogResult.Value)
+            {
+                database = rem.database;
+                BlockBuild();
+            }
         }
 
         private void Modify_Button_Click(object sender, RoutedEventArgs e)
