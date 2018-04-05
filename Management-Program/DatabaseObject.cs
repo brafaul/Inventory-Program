@@ -33,6 +33,10 @@ namespace Management_Program
         {
             return ID;
         }
+        public void SetAmount(int A)
+        {
+            Amount = A;
+        }
     }
     public class TDatabase
     {
@@ -74,6 +78,22 @@ namespace Management_Program
             }
             return -1;
 
+        }
+        public int FindIndexID(string ID)
+        {
+            int i = 0;
+            while(i < Size())
+            {
+                if (ID == GetElement(i).GetID())
+                {
+                    return i;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            return -1;
         }
         public int Size()
         {
