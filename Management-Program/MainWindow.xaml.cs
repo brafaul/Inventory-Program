@@ -23,6 +23,7 @@ namespace Management_Program
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool logCheck = false;
         TDatabase database = new TDatabase();
         public void BlockBuild()
         {
@@ -37,17 +38,25 @@ namespace Management_Program
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            LoginWindow log = new LoginWindow();
-            log.Owner = this;
-            log.ShowDialog();
-            if (log.DialogResult.HasValue && log.DialogResult.Value)
+            if (logCheck)
             {
-                MessageBox.Show("Welcome " + log.Username);
-                UserBox.Text = "Logged in as " + log.Username;
-                BlockBuild();
+                MessageBox.Show("User is already logged in");
             }
             else
-                this.Close();
+            {
+                LoginWindow log = new LoginWindow();
+                log.Owner = this;
+                log.ShowDialog();
+                if (log.DialogResult.HasValue && log.DialogResult.Value)
+                {
+                    MessageBox.Show("Welcome " + log.Username);
+                    UserBox.Text = "Logged in as " + log.Username;
+                    BlockBuild();
+                    logCheck = true;
+                }
+                else
+                    this.Close();
+            }
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -76,7 +85,14 @@ namespace Management_Program
 
         private void Modify_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            ModifyWindow mod = new ModifyWindow(database);
+            mod.Owner = this;
+            mod.ShowDialog();
+            if(mod.DialogResult.HasValue && mod.DialogResult.Value)
+            {
+                database = mod.database;
+                BlockBuild();
+            }
         }
 
         private void List_Button_Click(object sender, RoutedEventArgs e)

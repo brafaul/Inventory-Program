@@ -22,7 +22,7 @@ namespace Management_Program
     /// </summary>
     public partial class ModifyWindow : Window
     {
-        TDatabase database;
+        public TDatabase database;
         int index;
         string tempAmount = null;
         string ID = null;
@@ -52,10 +52,27 @@ namespace Management_Program
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            if(ID != null)
+            if(ID != null && Name == null)
             {
                 index = database.FindIndexID(ID);
                 IndexCheck = true;
+            }
+            if(Name != null && ID == null)
+            {
+                index = database.FindIndexName(Name);
+                IndexCheck = true;
+            }
+            if(ID != null && Name != null)
+            {
+                if(database.FindIndexID(ID) == database.FindIndexName(Name))
+                {
+                    index = database.FindIndexID(ID);
+                    IndexCheck = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error: ID and Name do not match");
+                }
             }
             if(tempAmount != null && IndexCheck)
             {
@@ -65,11 +82,11 @@ namespace Management_Program
                 if(result == false)
                 {
                     MessageBox.Show("Error: Amount entered is not int");
-                    ChangeCheck = true;
                 }
                 else
                 {
                     database.GetElement(index).SetAmount(Amount);
+                    ChangeCheck = true;
                 }
             }
             if (ChangeCheck)
