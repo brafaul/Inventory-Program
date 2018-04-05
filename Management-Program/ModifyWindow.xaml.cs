@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Name: ModifyWindow.xaml.cs
+//Purpose: Adds background functionality for the Modify Window
+//Author: Brayden Faulkner
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,6 +60,8 @@ namespace Management_Program
             if(tempAmount != null && IndexCheck)
             {
                 bool result = int.TryParse(tempAmount, out Amount);
+                //Checks to see if the amount entered into the
+                //amountbox is in infact an integer
                 if(result == false)
                 {
                     MessageBox.Show("Error: Amount entered is not int");
