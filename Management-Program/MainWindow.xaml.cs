@@ -28,7 +28,7 @@ namespace Management_Program
         public void BlockBuild()
         {
             BlockField block = new BlockField(ListBlock);
-            BlockDecorator dec = new BlockDecorator(block, database);
+            TextDecorator dec = new TextDecorator(block, database);
             ListBlock = dec.Draw();
         }
         public MainWindow()
@@ -105,6 +105,21 @@ namespace Management_Program
         private void Exit_Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsWindow set = new SettingsWindow();
+            set.Owner = this;
+            if(set.DialogResult.HasValue && set.DialogResult.Value)
+            {
+                if(set.BlockColor != null)
+                {
+                    BlockField block = new BlockField(ListBlock);
+                    ColorDecorator dec = new ColorDecorator(set.BlockColor, block);
+                    ListBlock = dec.Draw();
+                }
+            }
         }
     }
 }

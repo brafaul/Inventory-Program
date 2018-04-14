@@ -7,13 +7,13 @@ using System.Windows.Controls;
 
 namespace Management_Program
 {
-    public class BlockDecorator : BlockWidget
+    public class TextDecorator : BlockDecortator
     {
         string CurLine = null;
         TextBlock CurrBlock;
         TDatabase database;
         BlockWidget wid;
-        public BlockDecorator(BlockWidget W, TDatabase D)
+        public TextDecorator(BlockWidget W, TDatabase D):base(W)
         {
             wid = W;
             database = D;
