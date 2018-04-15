@@ -6,11 +6,13 @@
         xmlns:local="clr-namespace:Management_Program"
         mc:Ignorable="d"
         Title="SettingsWindow" Height="300" Width="300">
-    <Grid>
-        <Label Content="Change List Color" HorizontalAlignment="Center" Margin="10,10,179,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="ColorBlock" HorizontalAlignment="Left" Background="LightGray" Height="23" Margin="118,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="ColorBlock_TextChanged"/>
-        <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="163,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click"/>
-        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="38,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
+    <Viewbox>
+        <Grid>
+            <Label Content="Change List Color" HorizontalAlignment="Center" Margin="10,10,179,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="ColorBlock" HorizontalAlignment="Left" Background="LightGray" Height="23" Margin="118,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="ColorBlock_TextChanged"/>
+            <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="163,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click"/>
+            <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="38,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
 
-    </Grid>
+        </Grid>
+    </Viewbox>
 </Window>

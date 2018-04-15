@@ -111,6 +111,7 @@ namespace Management_Program
         {
             SettingsWindow set = new SettingsWindow();
             set.Owner = this;
+            set.ShowDialog();
             if(set.DialogResult.HasValue && set.DialogResult.Value)
             {
                 if(set.BlockColor != null)
