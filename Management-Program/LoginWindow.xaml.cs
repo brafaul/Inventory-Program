@@ -40,8 +40,7 @@ namespace Management_Program
 
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = false;
-            this.Close();
+            Close();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -91,7 +90,7 @@ namespace Management_Program
 
         private void PassBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
     }
 }

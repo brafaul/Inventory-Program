@@ -54,8 +54,8 @@ namespace Management_Program
                     BlockBuild();
                     logCheck = true;
                 }
-                else
-                    this.Close();
+                //else
+                    //this.Close();
             }
         }
 
@@ -121,6 +121,11 @@ namespace Management_Program
                     ListBlock = dec.Draw();
                 }
             }
+        }
+
+        private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

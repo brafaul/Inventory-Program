@@ -14,7 +14,7 @@
             <Button x:Name="Modify_Button" Content="Modify Item" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="125" Click="Modify_Button_Click"/>
             <Button x:Name="List_Button" Content="List Items" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="125" Click="List_Button_Click"/>
             <Button x:Name="Exit_Button" Content="Exit" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="125" Click="Exit_Button_Click"/>
-            <TextBox x:Name="UserBox" HorizontalAlignment="Left" Height="23" Margin="357,10,0,0" TextWrapping="Wrap" Text="Not Logged In" VerticalAlignment="Top" Width="150"/>
+            <TextBox x:Name="UserBox" HorizontalAlignment="Left" Height="23" Margin="357,10,0,0" TextWrapping="Wrap" Text="Not Logged In" VerticalAlignment="Top" Width="150" TextChanged="UserBox_TextChanged"/>
             <TextBlock x:Name="ListBlock" HorizontalAlignment="Left" Background="LightGray" Margin="250,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="264" Width="257" FontSize="20"/>
             <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Width="125" Click="SettingsButton_Click"/>
 
