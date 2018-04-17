@@ -20,6 +20,15 @@ namespace Management_Program
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
+
+    public static class MyExt
+    {
+        public static void PerformClick(this Button btn)
+        {
+            btn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
+        }
+    }
+
     public partial class LoginWindow : Window
     {
         public string Password;
@@ -27,16 +36,6 @@ namespace Management_Program
         public LoginWindow()
         {
             InitializeComponent();
-        }
-
-        private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Username = UserBox.Text;
-        }
-
-        private void PassBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Password = PassBox.Text;
         }
 
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
@@ -47,7 +46,52 @@ namespace Management_Program
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            if(string.IsNullOrEmpty(UserBox.Text))
+            {
+                MessageBox.Show("Please enter your username.", "Message", MessageBoxButton.OK, MessageBoxImage.Warning);
+                UserBox.Focus();
+                return;
+            }
+            try
+            {
+                LoginDataSetTableAdapters.UsersTableAdapter user = new LoginDataSetTableAdapters.UsersTableAdapter();
+                LoginDataSet.UsersDataTable dt = user.GetDataByUsernamePassword(UserBox.Text, PassBox.Text);
+                UserBox.Focus();
+                if(dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("You have been succesfully logged in.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Your username or password is incorrect.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void UserBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                UserBox.Focus();
+        }
+
+        private void PassBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                LoginButton.PerformClick();
+        }
+
+        private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void PassBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

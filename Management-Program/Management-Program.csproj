@@ -56,6 +56,9 @@
     </ApplicationDefinition>
     <Compile Include="BlockDecortator.cs" />
     <Compile Include="ColorDecorator.cs" />
+    <Compile Include="LoginDataSet.cs">
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoginDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
