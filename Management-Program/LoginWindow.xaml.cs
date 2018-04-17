@@ -31,8 +31,6 @@ namespace Management_Program
 
     public partial class LoginWindow : Window
     {
-        public string Password;
-        public string Username;
         public LoginWindow()
         {
             InitializeComponent();
@@ -40,7 +38,7 @@ namespace Management_Program
 
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -58,7 +56,9 @@ namespace Management_Program
                 UserBox.Focus();
                 if(dt.Rows.Count > 0)
                 {
+                    DialogResult = true;
                     MessageBox.Show("You have been succesfully logged in.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
                 }
                 else
                 {
