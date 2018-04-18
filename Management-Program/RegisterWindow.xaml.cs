@@ -19,9 +19,36 @@ namespace Management_Program
     /// </summary>
     public partial class RegisterWindow : Window
     {
+        string UserName;
+        string PassWord;
         public RegisterWindow()
         {
             InitializeComponent();
+        }
+
+        private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UserName = UserBox.Text;
+        }
+
+        private void PassBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            PassWord = PassBox.Text;
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            this.Close();
+        }
+
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Heres where the code to add the user goes,
+            //Probably also want to find a way to check for username repitition
+            DialogResult = true;
+            this.Close();
+
         }
     }
 }
