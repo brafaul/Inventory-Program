@@ -49,13 +49,13 @@ namespace Management_Program
                 log.ShowDialog();
                 if (log.DialogResult.HasValue && log.DialogResult.Value)
                 {
-                    MessageBox.Show("Welcome " + log.Username);
-                    UserBox.Text = "Logged in as " + log.Username;
+                    MessageBox.Show("Welcome " + log.UserBox.Text);
+                    UserBox.Text = "Logged in as " + log.UserBox.Text;
                     BlockBuild();
                     logCheck = true;
                 }
-                else
-                    this.Close();
+                //else
+                    //this.Close();
             }
         }
 
@@ -121,6 +121,11 @@ namespace Management_Program
                     ListBlock = dec.Draw();
                 }
             }
+        }
+
+        private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
