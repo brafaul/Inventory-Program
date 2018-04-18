@@ -95,13 +95,17 @@ namespace Management_Program
 
         private void ClickHere_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             SignupWindow signup = new SignupWindow();
             signup.Owner = this;
             signup.ShowDialog();
             if (signup.DialogResult.HasValue && signup.DialogResult.Value)
             {
                 MessageBox.Show("Thank you! You are now signed up!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Show();
             }
+            else
+                this.Show();
         }
     }
 }

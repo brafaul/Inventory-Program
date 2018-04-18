@@ -23,5 +23,27 @@ namespace Management_Program
         {
             InitializeComponent();
         }
+
+        private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void SignUp_Click(object sender, RoutedEventArgs e)
+        {
+            if (PassBox.Password.ToString() == PassBoxConfirm.Password.ToString())
+            {
+                LoginDataSetTableAdapters.UsersTableAdapter user = new LoginDataSetTableAdapters.UsersTableAdapter();
+                LoginDataSet.UsersDataTable dt = user.GetDataByUsernamePassword(UserBox.Text, PassBox.Password.ToString());
+                DialogResult = true;
+            }
+            else
+                MessageBox.Show("Your Password does not match.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Cancel_Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
