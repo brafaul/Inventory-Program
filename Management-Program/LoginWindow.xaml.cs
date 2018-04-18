@@ -52,7 +52,7 @@ namespace Management_Program
             try
             {
                 LoginDataSetTableAdapters.UsersTableAdapter user = new LoginDataSetTableAdapters.UsersTableAdapter();
-                LoginDataSet.UsersDataTable dt = user.GetDataByUsernamePassword(UserBox.Text, PassBox.Text);
+                LoginDataSet.UsersDataTable dt = user.GetDataByUsernamePassword(UserBox.Text, PassBox.Password.ToString());
                 UserBox.Focus();
                 if(dt.Rows.Count > 0)
                 {
@@ -91,6 +91,17 @@ namespace Management_Program
         private void PassBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             
+        }
+
+        private void ClickHere_Click(object sender, RoutedEventArgs e)
+        {
+            SignupWindow signup = new SignupWindow();
+            signup.Owner = this;
+            signup.ShowDialog();
+            if (signup.DialogResult.HasValue && signup.DialogResult.Value)
+            {
+                MessageBox.Show("Thank you! You are now signed up!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

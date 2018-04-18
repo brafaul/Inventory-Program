@@ -5,19 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Management_Program"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="400" Width="400">
     <Viewbox>
-        <Grid Background="Blue">
-            <Button x:Name="Login_Button" Content="Login" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125" Click="Login_Click"/>
-            <Button x:Name="AddButton" Content="Add Item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="10,45,0,0" Click="AddButton_Click"/>
-            <Button x:Name="Remove_Button" Content="Remove Item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="125" Margin="10,70,0,0" Click="Remove_Button_Click"/>
-            <Button x:Name="Modify_Button" Content="Modify Item" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" Width="125" Click="Modify_Button_Click"/>
-            <Button x:Name="List_Button" Content="List Items" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" Width="125" Click="List_Button_Click"/>
-            <Button x:Name="Exit_Button" Content="Exit" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="125" Click="Exit_Button_Click"/>
-            <TextBox x:Name="UserBox" HorizontalAlignment="Left" Height="23" Margin="357,10,0,0" TextWrapping="Wrap" Text="Not Logged In" VerticalAlignment="Top" Width="150" TextChanged="UserBox_TextChanged"/>
-            <TextBlock x:Name="ListBlock" HorizontalAlignment="Left" Background="LightGray" Margin="250,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="264" Width="257" FontSize="20"/>
-            <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top" Width="125" Click="SettingsButton_Click"/>
-
+        <Grid x:Name="Bground" Background="White" Height="360" Width="385" Margin="0,0,0,0">
+            <Button x:Name="Login_Button" Content="Login or Sign Up" HorizontalAlignment="Left" Margin="92,70,0,0" VerticalAlignment="Top" Width="200" Click="Login_Click" Height="50"/>
+            <Button x:Name="Exit_Button" Content="Exit" HorizontalAlignment="Left" Margin="92,235,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="Exit_Button_Click"/>
+            <TextBox x:Name="UserBox" HorizontalAlignment="Left" Height="23" Margin="225,10,0,0" TextWrapping="Wrap" Text="Not logged in" VerticalAlignment="Top" Width="150" TextChanged="UserBox_TextChanged"/>
+            <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="92,180,0,0" VerticalAlignment="Top" Width="200" Click="SettingsButton_Click" Height="50"/>
+            <Button x:Name="AccessDb" Content="Access Database" HorizontalAlignment="Left" Margin="92,125,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="AccessDb_Click"/>
         </Grid>
     </Viewbox>
 </Window>

@@ -8,11 +8,17 @@
         Title="SettingsWindow" Height="300" Width="300">
     <Viewbox>
         <Grid>
-            <Label Content="Change List Color" HorizontalAlignment="Center" Margin="10,10,179,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="ColorBlock" HorizontalAlignment="Left" Background="LightGray" Height="23" Margin="118,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="ColorBlock_TextChanged"/>
+            <Label Content="Background Color" HorizontalAlignment="Center" Margin="10,10,179,0" VerticalAlignment="Top"/>
             <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="163,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click"/>
             <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="38,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
-
+            <ComboBox x:Name="DropBox" HorizontalAlignment="Left" Margin="118,14,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="DropBox_SelectionChanged">
+                <Button x:Name="White" Content="White" Width="110" Click="White_Click"/>
+                <Button x:Name="Red" Content="Red" Width="110"/>
+                <Button x:Name="Blue" Content="Blue" Width="110"/>
+                <Button x:Name="Green" Content="Green" Width="110"/>
+                <Button x:Name="Gray" Content="Gray" Width="110"/>
+                <Button x:Name="Yellow" Content="Yellow" Width="110"/>
+            </ComboBox>
         </Grid>
     </Viewbox>
 </Window>

@@ -25,12 +25,6 @@ namespace Management_Program
     {
         bool logCheck = false;
         TDatabase database = new TDatabase();
-        public void BlockBuild()
-        {
-            BlockField block = new BlockField(ListBlock);
-            TextDecorator dec = new TextDecorator(block, database);
-            ListBlock = dec.Draw();
-        }
         public MainWindow()
         {
             InitializeComponent();
@@ -40,7 +34,9 @@ namespace Management_Program
         {
             if (logCheck)
             {
-                MessageBox.Show("User is already logged in");
+                UserBox.Text = "Not logged in";
+                Login_Button.Content = "Login or Sign Up";
+                logCheck = false;
             }
             else
             {
@@ -51,55 +47,10 @@ namespace Management_Program
                 {
                     MessageBox.Show("Welcome " + log.UserBox.Text);
                     UserBox.Text = "Logged in as " + log.UserBox.Text;
-                    BlockBuild();
                     logCheck = true;
+                    Login_Button.Content = "Logout";
                 }
-                //else
-                    //this.Close();
             }
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddWindow add = new AddWindow(database);
-            add.Owner = this;
-            add.ShowDialog();
-            if(add.DialogResult.HasValue && add.DialogResult.Value)
-            {
-                database = add.database;
-                MessageBox.Show("Item " + add.N + " has been added");
-                BlockBuild();
-            }
-        }
-        private void Remove_Button_Click(object sender, RoutedEventArgs e)
-        {
-            RemoveWindow rem = new RemoveWindow(database);
-            rem.Owner = this;
-            rem.ShowDialog();
-            if (rem.DialogResult.HasValue && rem.DialogResult.Value)
-            {
-                database = rem.database;
-                BlockBuild();
-            }
-        }
-
-        private void Modify_Button_Click(object sender, RoutedEventArgs e)
-        {
-            ModifyWindow mod = new ModifyWindow(database);
-            mod.Owner = this;
-            mod.ShowDialog();
-            if(mod.DialogResult.HasValue && mod.DialogResult.Value)
-            {
-                database = mod.database;
-                BlockBuild();
-            }
-        }
-
-        private void List_Button_Click(object sender, RoutedEventArgs e)
-        {
-            //This just updates the list in the case an unforseen circumstance
-            //Makes the user think it is not correct
-            BlockBuild();
         }
 
         private void Exit_Button_Click(object sender, RoutedEventArgs e)
@@ -116,14 +67,17 @@ namespace Management_Program
             {
                 if(set.BlockColor != null)
                 {
-                    BlockField block = new BlockField(ListBlock);
-                    ColorDecorator dec = new ColorDecorator(set.BlockColor, block);
-                    ListBlock = dec.Draw();
+                    
                 }
             }
         }
 
         private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void AccessDb_Click(object sender, RoutedEventArgs e)
         {
 
         }

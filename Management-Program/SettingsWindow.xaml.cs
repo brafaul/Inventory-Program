@@ -24,10 +24,6 @@ namespace Management_Program
         {
             InitializeComponent();
         }
-        private void ColorBlock_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            BlockColor = ColorBlock.Text;
-        }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
@@ -39,6 +35,16 @@ namespace Management_Program
         {
             DialogResult = false;
             this.Close();
+        }
+
+        private void DropBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void White_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

@@ -56,6 +56,9 @@
     </ApplicationDefinition>
     <Compile Include="BlockDecortator.cs" />
     <Compile Include="ColorDecorator.cs" />
+    <Compile Include="DatabaseWindow.xaml.cs">
+      <DependentUpon>DatabaseWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginDataSet.cs">
       <DependentUpon>LoginDataSet.xsd</DependentUpon>
     </Compile>
@@ -67,6 +70,9 @@
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SignupWindow.xaml.cs">
+      <DependentUpon>SignupWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TextDecorator.cs" />
     <Compile Include="BlockField.cs" />
     <Compile Include="BlockWidget.cs" />
@@ -77,6 +83,10 @@
       <DependentUpon>RemoveWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DatabaseWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SignupWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
