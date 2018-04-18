@@ -52,7 +52,7 @@ namespace Management_Program
             try
             {
                 LoginDataSetTableAdapters.UsersTableAdapter user = new LoginDataSetTableAdapters.UsersTableAdapter();
-                LoginDataSet.UsersDataTable dt = user.GetDataByUsernamePassword(UserBox.Text, PassBox.Text);
+                LoginDataSet.UsersDataTable dt = user.GetDataByUsernamePassword(UserBox.Text, PassBox.Password.ToString());
                 UserBox.Focus();
                 if(dt.Rows.Count > 0)
                 {
@@ -88,9 +88,5 @@ namespace Management_Program
 
         }
 
-        private void PassBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
     }
 }
