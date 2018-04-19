@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:Management_Program"
         mc:Ignorable="d"
         Title="DatabaseWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Viewbox>
+        <Grid>
+            <TextBlock x:Name="ListBlock" Background="Snow" HorizontalAlignment="Left" Margin="10,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="316" Width="585"/>
+            <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="611,118,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="AddButton_Click"/>
+            <Button x:Name="Remove_Button" Content="Remove" HorizontalAlignment="Left" Margin="612,153,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Remove_Button_Click"/>
+            <Button x:Name="Modify_Button" Content="Modify" HorizontalAlignment="Left" Margin="612,188,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="Modify_Button_Click"/>
+            <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Left" Margin="613,223,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Exit_Click"/>
+        </Grid>
+    </Viewbox>
 </Window>

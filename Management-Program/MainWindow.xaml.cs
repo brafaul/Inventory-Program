@@ -24,7 +24,6 @@ namespace Management_Program
     public partial class MainWindow : Window
     {
         bool logCheck = false;
-        TDatabase database = new TDatabase();
         public MainWindow()
         {
             InitializeComponent();
@@ -79,7 +78,14 @@ namespace Management_Program
 
         private void AccessDb_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
+            DatabaseWindow data = new DatabaseWindow();
+            data.Owner = this;
+            data.ShowDialog();
+            if(data.DialogResult.HasValue)
+            {
+                this.Show();
+            }
         }
     }
 }

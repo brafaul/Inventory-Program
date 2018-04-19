@@ -23,5 +23,55 @@ namespace Management_Program
         {
             InitializeComponent();
         }
+
+        TDatabase database = new TDatabase();
+        public void BlockBuild()
+        {
+            BlockField block = new BlockField(ListBlock);
+            TextDecorator dec = new TextDecorator(block, database);
+            ListBlock = dec.Draw();
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddWindow add = new AddWindow(database);
+            add.Owner = this;
+            add.ShowDialog();
+            if (add.DialogResult.HasValue && add.DialogResult.Value)
+            {
+                database = add.database;
+                MessageBox.Show("Item " + add.N + " has been added");
+                BlockBuild();
+            }
+        }
+
+        private void Remove_Button_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveWindow rem = new RemoveWindow(database);
+            rem.Owner = this;
+            rem.ShowDialog();
+            if (rem.DialogResult.HasValue && rem.DialogResult.Value)
+            {
+                database = rem.database;
+                BlockBuild();
+            }
+        }
+
+        private void Modify_Button_Click(object sender, RoutedEventArgs e)
+        {
+            ModifyWindow mod = new ModifyWindow(database);
+            mod.Owner = this;
+            mod.ShowDialog();
+            if (mod.DialogResult.HasValue && mod.DialogResult.Value)
+            {
+                database = mod.database;
+                BlockBuild();
+            }
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
