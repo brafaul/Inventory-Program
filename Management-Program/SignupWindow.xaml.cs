@@ -31,14 +31,15 @@ namespace Management_Program
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            if (PassBox.Password.ToString() == PassBoxConfirm.Password.ToString())
+            if (PassBox.Password.ToString() == PassBoxConfirm.Password.ToString() && PassBox.Password.Length != 0)
             {
-                LoginDataSetTableAdapters.UsersTableAdapter user = new LoginDataSetTableAdapters.UsersTableAdapter();
-                LoginDataSet.UsersDataTable dt = user.GetDataByUsernamePassword(UserBox.Text, PassBox.Password.ToString());
+                LoginDataSetTableAdapters.UsersTableAdapter usersTableAdapter = new LoginDataSetTableAdapters.UsersTableAdapter();
+                usersTableAdapter.Insert(UserBox.Text, PassBox.Password.ToString());
+
                 DialogResult = true;
             }
             else
-                MessageBox.Show("Your Password does not match.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Your Password is invalid or does not match.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
