@@ -10,9 +10,9 @@
         <Grid x:Name="Bground" Background="White" Height="360" Width="385" Margin="0,0,0,0">
             <Button x:Name="Login_Button" Content="Login or Sign Up" HorizontalAlignment="Left" Margin="92,70,0,0" VerticalAlignment="Top" Width="200" Click="Login_Click" Height="50"/>
             <Button x:Name="Exit_Button" Content="Exit" HorizontalAlignment="Left" Margin="92,235,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="Exit_Button_Click"/>
-            <TextBox x:Name="UserBox" HorizontalAlignment="Left" Height="23" Margin="225,10,0,0" TextWrapping="Wrap" Text="Not logged in" VerticalAlignment="Top" Width="150" TextChanged="UserBox_TextChanged"/>
             <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="92,180,0,0" VerticalAlignment="Top" Width="200" Click="SettingsButton_Click" Height="50"/>
             <Button x:Name="AccessDb" Content="Access Database" HorizontalAlignment="Left" Margin="92,125,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="AccessDb_Click"/>
+            <Label x:Name="LoginBox" Content="Not Logged in" HorizontalAlignment="Left" Margin="229,10,0,0" VerticalAlignment="Top" Width="146" FlowDirection="RightToLeft"/>
         </Grid>
     </Viewbox>
 </Window>

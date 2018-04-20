@@ -33,7 +33,7 @@ namespace Management_Program
         {
             if (logCheck)
             {
-                UserBox.Text = "Not logged in";
+                LoginBox.Content = "Not logged in";
                 Login_Button.Content = "Login or Sign Up";
                 logCheck = false;
             }
@@ -44,8 +44,8 @@ namespace Management_Program
                 log.ShowDialog();
                 if (log.DialogResult.HasValue && log.DialogResult.Value)
                 {
-                    MessageBox.Show("Welcome " + log.UserBox.Text);
-                    UserBox.Text = "Logged in as " + log.UserBox.Text;
+                    MessageBox.Show("Welcome " + log.UserBox.Text, "Message", MessageBoxButton.OK);
+                    LoginBox.Content = "Logged in as " + log.UserBox.Text;
                     logCheck = true;
                     Login_Button.Content = "Logout";
                 }
