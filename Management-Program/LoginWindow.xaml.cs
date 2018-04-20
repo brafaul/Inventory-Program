@@ -102,7 +102,7 @@ namespace Management_Program
             if (signup.DialogResult.HasValue && signup.DialogResult.Value)
             {
                 MessageBox.Show("Thank you! You are now signed up!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Show();
+                this.Close();
             }
             else
                 this.Show();

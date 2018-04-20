@@ -33,10 +33,16 @@ namespace Management_Program
         {
             if (PassBox.Password.ToString() == PassBoxConfirm.Password.ToString() && PassBox.Password.Length != 0)
             {
-                LoginDataSetTableAdapters.UsersTableAdapter usersTableAdapter = new LoginDataSetTableAdapters.UsersTableAdapter();
-                usersTableAdapter.Insert(UserBox.Text, PassBox.Password.ToString());
-
-                DialogResult = true;
+                try
+                {
+                    LoginDataSetTableAdapters.UsersTableAdapter newUser = new LoginDataSetTableAdapters.UsersTableAdapter();
+                    newUser.InsertQuery(UserBox.Text, PassBox.Password.ToString());
+                    DialogResult = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
             else
                 MessageBox.Show("Your Password is invalid or does not match.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
