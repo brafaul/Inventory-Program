@@ -37,7 +37,7 @@ namespace Management_Program
             {
                 try
                 {
-                    /*OleDbConnection con = new OleDbConnection(conString);
+                    OleDbConnection con = new OleDbConnection(conString);
                     OleDbCommand insert = new OleDbCommand();
                     insert.CommandType = System.Data.CommandType.Text;
                     insert.CommandText = "insert into Users ([Username], [Password]) values (?, ?);";
@@ -46,13 +46,13 @@ namespace Management_Program
                     insert.Connection = con;
                     con.Open();
                     insert.ExecuteNonQuery();
-                    con.Close(); */
+                    con.Close();
 
-                    LoginDataSet set = new LoginDataSet();
+                    /*LoginDataSet set = new LoginDataSet();
                     set.Users.AddUsersRow(UserBox.Text, PassBox.Password.ToString());
 
                     LoginDataSetTableAdapters.UsersTableAdapter adap = new LoginDataSetTableAdapters.UsersTableAdapter();
-                    adap.Update(set.Users);
+                    adap.Update(set.Users);*/
 
                     DialogResult = true;
                 }
