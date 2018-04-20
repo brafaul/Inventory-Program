@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.OleDb;
 
 namespace Management_Program
 {
@@ -31,12 +32,28 @@ namespace Management_Program
 
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
+            string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
             if (PassBox.Password.ToString() == PassBoxConfirm.Password.ToString() && PassBox.Password.Length != 0)
             {
                 try
                 {
-                    LoginDataSetTableAdapters.UsersTableAdapter newUser = new LoginDataSetTableAdapters.UsersTableAdapter();
-                    newUser.InsertQuery(UserBox.Text, PassBox.Password.ToString());
+                    /*OleDbConnection con = new OleDbConnection(conString);
+                    OleDbCommand insert = new OleDbCommand();
+                    insert.CommandType = System.Data.CommandType.Text;
+                    insert.CommandText = "insert into Users ([Username], [Password]) values (?, ?);";
+                    insert.Parameters.AddWithValue("@Username", UserBox.Text);
+                    insert.Parameters.AddWithValue("@Password", PassBox.Password.ToString());
+                    insert.Connection = con;
+                    con.Open();
+                    insert.ExecuteNonQuery();
+                    con.Close(); */
+
+                    LoginDataSet set = new LoginDataSet();
+                    set.Users.AddUsersRow(UserBox.Text, PassBox.Password.ToString());
+
+                    LoginDataSetTableAdapters.UsersTableAdapter adap = new LoginDataSetTableAdapters.UsersTableAdapter();
+                    adap.Update(set.Users);
+
                     DialogResult = true;
                 }
                 catch (Exception ex)
