@@ -43,9 +43,17 @@ namespace Management_Program
                     insert.CommandText = "insert into Users ([Username], [Password]) values (?, ?);";
                     insert.Parameters.AddWithValue("@Username", UserBox.Text);
                     insert.Parameters.AddWithValue("@Password", PassBox.Password.ToString());
+
+                    OleDbCommand addTable = new OleDbCommand();
+                    addTable.CommandType = System.Data.CommandType.Text;
+                    addTable.CommandText = "CREATE TABLE " + UserBox.Text + " (Item text, Quantity text, ID longtext);";
+
                     insert.Connection = con;
+                    addTable.Connection = con;
+
                     con.Open();
                     insert.ExecuteNonQuery();
+                    addTable.ExecuteNonQuery();
                     con.Close();
 
                     /*LoginDataSet set = new LoginDataSet();
