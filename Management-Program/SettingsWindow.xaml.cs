@@ -44,7 +44,37 @@ namespace Management_Program
 
         private void White_Click(object sender, RoutedEventArgs e)
         {
-            
+            BlockColor = "White";
+        }
+
+        private void Red_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Red";
+        }
+
+        private void Blue_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Blue";
+        }
+
+        private void Green_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Green";
+        }
+
+        private void Gray_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Gray";
+        }
+
+        private void Yellow_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Yellow";
+        }
+
+        private void Default_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Snow";
         }
     }
 }

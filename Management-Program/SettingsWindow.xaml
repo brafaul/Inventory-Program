@@ -13,11 +13,12 @@
             <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="38,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
             <ComboBox x:Name="DropBox" HorizontalAlignment="Left" Margin="118,14,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="DropBox_SelectionChanged">
                 <Button x:Name="White" Content="White" Width="110" Click="White_Click"/>
-                <Button x:Name="Red" Content="Red" Width="110"/>
-                <Button x:Name="Blue" Content="Blue" Width="110"/>
-                <Button x:Name="Green" Content="Green" Width="110"/>
-                <Button x:Name="Gray" Content="Gray" Width="110"/>
-                <Button x:Name="Yellow" Content="Yellow" Width="110"/>
+                <Button x:Name="Red" Content="Red" Width="110" Click="Red_Click"/>
+                <Button x:Name="Blue" Content="Blue" Width="110" Click="Blue_Click"/>
+                <Button x:Name="Green" Content="Green" Width="110" Click="Green_Click"/>
+                <Button x:Name="Gray" Content="Gray" Width="110" Click="Gray_Click"/>
+                <Button x:Name="Yellow" Content="Yellow" Width="110" Click="Yellow_Click"/>
+                <Button x:Name="Default" Content="Default" Width="110" Click="Default_Click"/>
             </ComboBox>
         </Grid>
     </Viewbox>
