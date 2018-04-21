@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.OleDb;
 
 namespace Management_Program
 {
@@ -80,13 +81,59 @@ namespace Management_Program
 
         private void AccessDb_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            DatabaseWindow data = new DatabaseWindow(logInfo);
-            data.Owner = this;
-            data.ShowDialog();
-            if(data.DialogResult.HasValue)
+            if (logCheck == true)
             {
-                this.Show();
+                this.Hide();
+                TDatabase database = new TDatabase();
+
+                try
+                {
+                    string currentItem = null;
+                    string x;
+                    string currentID = null;
+
+                    string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
+                    OleDbConnection con = new OleDbConnection(conString);
+                    OleDbCommand cmd = new OleDbCommand();
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = "select * from " + logInfo + ";";
+                    cmd.Connection = con;
+                    con.Open();
+                    OleDbDataReader read = cmd.ExecuteReader();
+                    while (read.Read())
+                    {
+                        currentItem = read["Item"].ToString();
+                        x = read["Quantity"].ToString();
+                        currentID = read["ID"].ToString();
+                        int currentQ = Int32.Parse(x);
+
+                        database.AddObject(currentItem, currentQ, currentID);
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+                DatabaseWindow data = new DatabaseWindow(logInfo, database);
+                data.Owner = this;
+                data.ShowDialog();
+                if (data.DialogResult.HasValue)
+                {
+                    this.Show();
+                }
+            }
+            else
+            {
+                this.Hide();
+                DatabaseWindow data = new DatabaseWindow();
+                data.Owner = this;
+                data.ShowDialog();
+                if (data.DialogResult.HasValue)
+                {
+                    this.Show();
+                }
             }
         }
     }

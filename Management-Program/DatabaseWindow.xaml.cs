@@ -19,14 +19,21 @@ namespace Management_Program
     /// </summary>
     public partial class DatabaseWindow : Window
     {
-        string logInfo = null;
-        public DatabaseWindow(string log)
+        public string logInfo = null;
+        TDatabase database = new TDatabase();
+
+        public DatabaseWindow()
+        {
+            InitializeComponent();
+        }
+        public DatabaseWindow(string log, TDatabase db)
         {
             InitializeComponent();
             logInfo = log;
+            database = db;
+            BlockBuild();
         }
 
-        TDatabase database = new TDatabase();
         public void BlockBuild()
         {
             BlockField block = new BlockField(ListBlock);
@@ -49,7 +56,7 @@ namespace Management_Program
 
         private void Remove_Button_Click(object sender, RoutedEventArgs e)
         {
-            RemoveWindow rem = new RemoveWindow(database);
+            RemoveWindow rem = new RemoveWindow(database, logInfo);
             rem.Owner = this;
             rem.ShowDialog();
             if (rem.DialogResult.HasValue && rem.DialogResult.Value)
@@ -61,7 +68,7 @@ namespace Management_Program
 
         private void Modify_Button_Click(object sender, RoutedEventArgs e)
         {
-            ModifyWindow mod = new ModifyWindow(database);
+            ModifyWindow mod = new ModifyWindow(database, logInfo);
             mod.Owner = this;
             mod.ShowDialog();
             if (mod.DialogResult.HasValue && mod.DialogResult.Value)

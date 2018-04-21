@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.OleDb;
 
 namespace Management_Program
 {
@@ -25,13 +26,15 @@ namespace Management_Program
         public TDatabase database;
         string RemName = null;
         bool NameCheck = false;
-        public RemoveWindow()
+        string logInfo = null;
+        public RemoveWindow(string log)
         {
             InitializeComponent();
         }
-        public RemoveWindow(TDatabase D)
+        public RemoveWindow(TDatabase D, string log)
         {
             database = D;
+            logInfo = log;
             InitializeComponent();
         }
         private void Cancel_Click(object sender, RoutedEventArgs e)
@@ -46,6 +49,24 @@ namespace Management_Program
             {
                 DialogResult = true;
                 RemName = RemNameBox.Text;
+
+                try
+                {
+                    string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
+                    OleDbConnection con = new OleDbConnection(conString);
+                    OleDbCommand add = new OleDbCommand();
+                    add.CommandType = System.Data.CommandType.Text;
+                    add.CommandText = "delete " + logInfo + " where Item = '" + RemName + "';";
+                    add.Connection = con;
+                    con.Open();
+                    add.ExecuteNonQuery();
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
                 database.RemoveByName(RemName);
                 this.Close();
             }
