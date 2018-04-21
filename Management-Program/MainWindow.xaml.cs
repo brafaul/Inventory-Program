@@ -26,6 +26,7 @@ namespace Management_Program
     {
         bool logCheck = false;
         string logInfo = null;
+        string settingsColor = "Snow";
         public MainWindow()
         {
             InitializeComponent();
@@ -67,10 +68,7 @@ namespace Management_Program
             set.ShowDialog();
             if(set.DialogResult.HasValue && set.DialogResult.Value)
             {
-                if(set.BlockColor != null)
-                {
-                    
-                }
+                settingsColor = set.BlockColor;
             }
         }
 
@@ -116,7 +114,7 @@ namespace Management_Program
                     MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                DatabaseWindow data = new DatabaseWindow(logInfo, database);
+                DatabaseWindow data = new DatabaseWindow(logInfo, database, settingsColor);
                 data.Owner = this;
                 data.ShowDialog();
                 if (data.DialogResult.HasValue)

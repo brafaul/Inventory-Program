@@ -20,17 +20,19 @@ namespace Management_Program
     public partial class DatabaseWindow : Window
     {
         public string logInfo = null;
+        string settingsColor = null;
         TDatabase database = new TDatabase();
 
         public DatabaseWindow()
         {
             InitializeComponent();
         }
-        public DatabaseWindow(string log, TDatabase db)
+        public DatabaseWindow(string log, TDatabase db, string color)
         {
             InitializeComponent();
             logInfo = log;
             database = db;
+            settingsColor = color;
             BlockBuild();
         }
 
@@ -38,7 +40,9 @@ namespace Management_Program
         {
             BlockField block = new BlockField(ListBlock);
             TextDecorator dec = new TextDecorator(block, database);
+            ColorDecorator dec2 = new ColorDecorator(settingsColor, block);
             ListBlock = dec.Draw();
+            ListBlock = dec2.Draw();
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)

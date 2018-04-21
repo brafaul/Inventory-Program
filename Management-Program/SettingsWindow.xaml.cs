@@ -45,36 +45,43 @@ namespace Management_Program
         private void White_Click(object sender, RoutedEventArgs e)
         {
             BlockColor = "White";
+            DropBox.IsDropDownOpen = false;
         }
 
         private void Red_Click(object sender, RoutedEventArgs e)
         {
             BlockColor = "Red";
+            DropBox.IsDropDownOpen = false;
         }
 
         private void Blue_Click(object sender, RoutedEventArgs e)
         {
             BlockColor = "Blue";
+            DropBox.IsDropDownOpen = false;
         }
 
         private void Green_Click(object sender, RoutedEventArgs e)
         {
             BlockColor = "Green";
+            DropBox.IsDropDownOpen = false;
         }
 
         private void Gray_Click(object sender, RoutedEventArgs e)
         {
             BlockColor = "Gray";
+            DropBox.IsDropDownOpen = false;
         }
 
         private void Yellow_Click(object sender, RoutedEventArgs e)
         {
             BlockColor = "Yellow";
+            DropBox.IsDropDownOpen = false;
         }
 
         private void Default_Click(object sender, RoutedEventArgs e)
         {
             BlockColor = "Snow";
+            DropBox.IsDropDownOpen = false;
         }
     }
 }
