@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.OleDb;
 
 namespace Management_Program
 {
@@ -28,21 +29,19 @@ namespace Management_Program
         public string N;
         public int Amount;
         public string ID;
+        public string logInfo;
         bool NameCheck = false;
         //Makes sure the user entered in a name value
         bool AmountCheck = false;
         //Makes sure the user entered in an amount vaule
         bool IDCheck = false;
         //Makes sure the user has entered in an ID value
-        public AddWindow()
-        {
-            InitializeComponent();
-        }
-        public AddWindow(TDatabase D)
+        public AddWindow(TDatabase D, string log)
         {
             //Constructor that makes the internal database equal to one on the page that calls it
-            database = D;
             InitializeComponent();
+            database = D;
+            logInfo = log;
         }
         private void NameBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -76,9 +75,29 @@ namespace Management_Program
                     }
                     else
                     {
-                        DialogResult = true;
-                        database.AddObject(N, Amount, ID);
-                        this.Close();
+                        try
+                        {
+                            string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
+                            OleDbConnection con = new OleDbConnection(conString);
+                            OleDbCommand add = new OleDbCommand();
+                            add.CommandType = System.Data.CommandType.Text;
+                            add.CommandText = "insert into " + logInfo + " (Item, Quantity, ID) VALUES (?, ?, ?);";
+                            add.Parameters.AddWithValue("@Item", N);
+                            add.Parameters.AddWithValue("@Quantity", Amount);
+                            add.Parameters.AddWithValue("@ID", ID);
+                            add.Connection = con;
+                            con.Open();
+                            add.ExecuteNonQuery();
+                            con.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+
+                    DialogResult = true;
+                    database.AddObject(N, Amount, ID);
+                    this.Close();
                     }
                 }
             }

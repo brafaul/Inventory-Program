@@ -24,6 +24,7 @@ namespace Management_Program
     public partial class MainWindow : Window
     {
         bool logCheck = false;
+        string logInfo = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace Management_Program
                 {
                     MessageBox.Show("Welcome " + log.UserBox.Text, "Message", MessageBoxButton.OK);
                     LoginBox.Content = "Logged in as " + log.UserBox.Text;
+                    logInfo = log.UserBox.Text;
                     logCheck = true;
                     Login_Button.Content = "Logout";
                 }
@@ -79,7 +81,7 @@ namespace Management_Program
         private void AccessDb_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            DatabaseWindow data = new DatabaseWindow();
+            DatabaseWindow data = new DatabaseWindow(logInfo);
             data.Owner = this;
             data.ShowDialog();
             if(data.DialogResult.HasValue)

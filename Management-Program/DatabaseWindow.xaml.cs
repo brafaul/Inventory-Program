@@ -19,9 +19,11 @@ namespace Management_Program
     /// </summary>
     public partial class DatabaseWindow : Window
     {
-        public DatabaseWindow()
+        string logInfo = null;
+        public DatabaseWindow(string log)
         {
             InitializeComponent();
+            logInfo = log;
         }
 
         TDatabase database = new TDatabase();
@@ -34,7 +36,7 @@ namespace Management_Program
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddWindow add = new AddWindow(database);
+            AddWindow add = new AddWindow(database, logInfo);
             add.Owner = this;
             add.ShowDialog();
             if (add.DialogResult.HasValue && add.DialogResult.Value)
@@ -72,6 +74,11 @@ namespace Management_Program
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
