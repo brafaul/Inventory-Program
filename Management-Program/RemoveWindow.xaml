@@ -8,10 +8,10 @@
         Title="RemoveWindow" Height="300" Width="300">
     <Viewbox>
         <Grid>
-            <TextBox x:Name="RemNameBox" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="RemNameBox_TextChanged"/>
+            <TextBox x:Name="RemNameBox" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="RemNameBox_TextChanged" TabIndex="1" />
             <Label x:Name="NameLabel" Content="Remove By Name" Background="LightGray" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="120"/>
-            <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,239,75,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click"/>
-            <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="151,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click"/>
+            <Button x:Name="Cancel" Content="Cancel" HorizontalAlignment="Center" Margin="0,239,75,0" VerticalAlignment="Top" Width="75" Click="Cancel_Click" TabIndex="3" />
+            <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="151,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click" TabIndex="2" />
         </Grid>
     </Viewbox>
 </Window>

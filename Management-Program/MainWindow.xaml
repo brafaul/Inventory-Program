@@ -8,10 +8,10 @@
         Title="MainWindow" Height="400" Width="400">
     <Viewbox>
         <Grid x:Name="Bground" Background="White" Height="360" Width="385" Margin="0,0,0,0">
-            <Button x:Name="Login_Button" Content="Login or Sign Up" HorizontalAlignment="Left" Margin="92,70,0,0" VerticalAlignment="Top" Width="200" Click="Login_Click" Height="50"/>
-            <Button x:Name="Exit_Button" Content="Exit" HorizontalAlignment="Left" Margin="92,235,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="Exit_Button_Click"/>
-            <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="92,180,0,0" VerticalAlignment="Top" Width="200" Click="SettingsButton_Click" Height="50"/>
-            <Button x:Name="AccessDb" Content="Access Database" HorizontalAlignment="Left" Margin="92,125,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="AccessDb_Click"/>
+            <Button x:Name="Login_Button" Content="Login or Sign Up" HorizontalAlignment="Left" Margin="92,70,0,0" VerticalAlignment="Top" Width="200" Click="Login_Click" Height="50" TabIndex="1" />
+            <Button x:Name="Exit_Button" Content="Exit" HorizontalAlignment="Left" Margin="92,235,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="Exit_Button_Click" TabIndex="4" />
+            <Button x:Name="SettingsButton" Content="Settings" HorizontalAlignment="Left" Margin="92,180,0,0" VerticalAlignment="Top" Width="200" Click="SettingsButton_Click" Height="50" TabIndex="3" />
+            <Button x:Name="AccessDb" Content="Access Database" HorizontalAlignment="Left" Margin="92,125,0,0" VerticalAlignment="Top" Width="200" Height="50" Click="AccessDb_Click" TabIndex="2" />
             <Label x:Name="LoginBox" Content="Not Logged in" HorizontalAlignment="Left" Margin="229,10,0,0" VerticalAlignment="Top" Width="146" FlowDirection="RightToLeft"/>
         </Grid>
     </Viewbox>

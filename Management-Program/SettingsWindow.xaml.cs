@@ -83,5 +83,17 @@ namespace Management_Program
             BlockColor = "Snow";
             DropBox.IsDropDownOpen = false;
         }
+
+        private void DropBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                DropBox.IsDropDownOpen = true;
+            }
+            else if(e.Key == Key.Escape)
+            {
+                DropBox.IsDropDownOpen = false;
+            }
+        }
     }
 }

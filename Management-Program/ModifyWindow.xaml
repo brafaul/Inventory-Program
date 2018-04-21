@@ -9,13 +9,13 @@
     <Viewbox>
         <Grid>
             <Label Content="ID of Item" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="IDMBox" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="IDMBox_TextChanged"/>
+            <TextBox x:Name="IDMBox" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="IDMBox_TextChanged" TabIndex="1" />
             <Label Content="Change Amount To" HorizontalAlignment="Left" Margin="10,128,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="ATBox" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="10,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="ATBox_TextChanged"/>
-            <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="158,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click"/>
+            <TextBox x:Name="ATBox" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="10,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="ATBox_TextChanged" TabIndex="3" />
+            <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="158,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click" TabIndex="4" />
             <Label Content="Name of Item" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="NameBox" HorizontalAlignment="Left" Background="LightGray" Height="23" Margin="10,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="NameBox_TextChanged"/>
-            <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="55,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
+            <TextBox x:Name="NameBox" HorizontalAlignment="Left" Background="LightGray" Height="23" Margin="10,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="NameBox_TextChanged" TabIndex="2" />
+            <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="55,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click" TabIndex="5" />
         </Grid>
     </Viewbox>
 </Window>

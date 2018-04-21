@@ -9,9 +9,9 @@
     <Viewbox>
         <Grid>
             <Label Content="Background Color" HorizontalAlignment="Center" Margin="10,10,179,0" VerticalAlignment="Top"/>
-            <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="163,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click"/>
-            <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="38,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click"/>
-            <ComboBox x:Name="DropBox" HorizontalAlignment="Left" Margin="118,14,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="DropBox_SelectionChanged">
+            <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="163,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click" TabIndex="2" />
+            <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="38,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click" TabIndex="3" />
+            <ComboBox x:Name="DropBox" HorizontalAlignment="Left" Margin="118,14,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="DropBox_SelectionChanged" TabIndex="1" KeyDown="DropBox_KeyDown" >
                 <Button x:Name="White" Content="White" Width="110" Click="White_Click"/>
                 <Button x:Name="Red" Content="Red" Width="110" Click="Red_Click"/>
                 <Button x:Name="Blue" Content="Blue" Width="110" Click="Blue_Click"/>

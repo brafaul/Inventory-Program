@@ -56,7 +56,7 @@ namespace Management_Program
                     OleDbConnection con = new OleDbConnection(conString);
                     OleDbCommand add = new OleDbCommand();
                     add.CommandType = System.Data.CommandType.Text;
-                    add.CommandText = "delete " + logInfo + " where Item = '" + RemName + "';";
+                    add.CommandText = "delete from " + logInfo + " where Item = '" + RemName + "';";
                     add.Connection = con;
                     con.Open();
                     add.ExecuteNonQuery();
