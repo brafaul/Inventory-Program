@@ -47,7 +47,7 @@ namespace Management_Program
                 log.ShowDialog();
                 if (log.DialogResult.HasValue && log.DialogResult.Value)
                 {
-                    MessageBox.Show("Welcome " + log.UserBox.Text, "Message", MessageBoxButton.OK);
+                    MessageBox.Show("Welcome back, " + log.UserBox.Text, "Message", MessageBoxButton.OK, MessageBoxImage.None);
                     LoginBox.Content = "Logged in as " + log.UserBox.Text;
                     logInfo = log.UserBox.Text;
                     logCheck = true;
@@ -124,14 +124,7 @@ namespace Management_Program
             }
             else
             {
-                this.Hide();
-                DatabaseWindow data = new DatabaseWindow();
-                data.Owner = this;
-                data.ShowDialog();
-                if (data.DialogResult.HasValue)
-                {
-                    this.Show();
-                }
+                MessageBox.Show("You are not logged on.", "Message", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

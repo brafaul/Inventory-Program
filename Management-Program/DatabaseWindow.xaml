@@ -8,11 +8,16 @@
         Title="DatabaseWindow" Height="450" Width="800">
     <Viewbox>
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="23*"/>
+            </Grid.ColumnDefinitions>
             <TextBlock x:Name="ListBlock" Background="Snow" HorizontalAlignment="Left" Margin="103,48,0,-24" TextWrapping="Wrap" VerticalAlignment="Top" Height="229" Width="384"/>
-            <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="611,118,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="AddButton_Click"/>
-            <Button x:Name="Remove_Button" Content="Remove" HorizontalAlignment="Left" Margin="612,153,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Remove_Button_Click"/>
-            <Button x:Name="Modify_Button" Content="Modify" HorizontalAlignment="Left" Margin="612,188,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="Modify_Button_Click"/>
-            <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Left" Margin="613,223,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Exit_Click"/>
+            <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="110.508,118,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="AddButton_Click" Grid.Column="1"/>
+            <Button x:Name="Remove_Button" Content="Remove" HorizontalAlignment="Left" Margin="111.508,153,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Remove_Button_Click" Grid.Column="1"/>
+            <Button x:Name="Modify_Button" Content="Modify" HorizontalAlignment="Left" Margin="111.508,188,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="Modify_Button_Click" Grid.Column="1"/>
+            <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Left" Margin="112.508,223,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Exit_Click" Grid.Column="1"/>
+            <Label x:Name="LoginLabel" Content="Logged in as " HorizontalAlignment="Left" Margin="469,-49,0,0" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2" FlowDirection="RightToLeft"/>
         </Grid>
     </Viewbox>
 </Window>
