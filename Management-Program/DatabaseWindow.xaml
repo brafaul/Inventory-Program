@@ -8,12 +8,11 @@
         Title="DatabaseWindow" Height="450" Width="800">
     <Viewbox>
         <Grid>
-            <TextBlock x:Name="ListBlock" Background="Snow" HorizontalAlignment="Left" Margin="392,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="108" Width="203"/>
+            <TextBlock x:Name="ListBlock" Background="Snow" HorizontalAlignment="Left" Margin="103,48,0,-24" TextWrapping="Wrap" VerticalAlignment="Top" Height="229" Width="384"/>
             <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="611,118,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="AddButton_Click"/>
             <Button x:Name="Remove_Button" Content="Remove" HorizontalAlignment="Left" Margin="612,153,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Remove_Button_Click"/>
             <Button x:Name="Modify_Button" Content="Modify" HorizontalAlignment="Left" Margin="612,188,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="Modify_Button_Click"/>
             <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Left" Margin="613,223,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Exit_Click"/>
-            <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Height="256" Margin="47,27,0,0" VerticalAlignment="Top" Width="408" SelectionChanged="DataGrid_SelectionChanged"/>
         </Grid>
     </Viewbox>
 </Window>
