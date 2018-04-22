@@ -1,4 +1,4 @@
-﻿//Name: LoginWindow.xaml.cs
+//Name: LoginWindow.xaml.cs
 //Purpose: Adds interaction logic for the login page
 //Author: Brayden Faulkner
 using System;

@@ -1,4 +1,4 @@
-﻿//Name: ModifyWindow.xaml.cs
+//Name: ModifyWindow.xaml.cs
 //Purpose: Adds background functionality for the Modify Window
 //Author: Brayden Faulkner
 using System;

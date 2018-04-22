@@ -1,4 +1,4 @@
-﻿//Name: AddWindow.xaml.cs
+//Name: AddWindow.xaml.cs
 //Purpose: Add the functions to allow the user to add to the list that stores their database
 //Author: Brayden Faulkner
 using System;
