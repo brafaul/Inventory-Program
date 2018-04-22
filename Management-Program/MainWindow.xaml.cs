@@ -1,6 +1,6 @@
 ﻿//Name:MainWindow.xaml.cs
 //Purpose: Establishes back logic for main window 
-//Author: Brayden Faulkner
+//Authors: Brayden Faulkner and Jon Sulcer
 using System;
 using System.Collections.Generic;
 using System.Linq;
