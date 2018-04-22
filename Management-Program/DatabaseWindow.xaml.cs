@@ -33,6 +33,7 @@ namespace Management_Program
             logInfo = log;
             database = db;
             settingsColor = color;
+            LoginLabel.Content += logInfo;
             BlockBuild();
         }
 
