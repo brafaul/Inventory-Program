@@ -68,17 +68,24 @@ namespace Management_Program
                 }
                 else
                 {
-                    ID = NumBox.Text;
-                    if (database.Repetition(N, ID) == true)
+                    if (Amount < 0)
                     {
-                        //Checks for repeated name or ID number
-                        MessageBox.Show("Cannot Repeat Name or ID");
+                        MessageBox.Show("Amount Cannot Be Negative");
                     }
                     else
                     {
-                        DialogResult = true;
-                        database.AddObject(N, Amount, ID);
-                        this.Close();
+                        ID = NumBox.Text;
+                        if (database.Repetition(N, ID) == true)
+                        {
+                            //Checks for repeated name or ID number
+                            MessageBox.Show("Cannot Repeat Name or ID");
+                        }
+                        else
+                        {
+                            DialogResult = true;
+                            database.AddObject(N, Amount, ID);
+                            this.Close();
+                        }
                     }
                 }
             }

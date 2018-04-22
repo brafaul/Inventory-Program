@@ -85,8 +85,15 @@ namespace Management_Program
                 }
                 else
                 {
-                    database.GetElement(index).SetAmount(Amount);
-                    ChangeCheck = true;
+                    if (Amount < 0)
+                    {
+                        MessageBox.Show("Amount Cannot Be Negative")
+                    }
+                    else
+                    {
+                        database.GetElement(index).SetAmount(Amount);
+                        ChangeCheck = true;
+                    }
                 }
             }
             if (ChangeCheck)
