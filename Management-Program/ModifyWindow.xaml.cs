@@ -1,4 +1,4 @@
-﻿//Name: ModifyWindow.xaml.cs
+//Name: ModifyWindow.xaml.cs
 //Purpose: Adds background functionality for the Modify Window
 //Author: Brayden Faulkner
 using System;
@@ -14,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.OleDb;
 
 namespace Management_Program
 {
@@ -30,13 +31,16 @@ namespace Management_Program
         string Name = null;
         bool IndexCheck = false;
         bool ChangeCheck = false;
+        public string logInfo;
+
         public ModifyWindow()
         {
             InitializeComponent();
         }
-        public ModifyWindow(TDatabase D)
+        public ModifyWindow(TDatabase D, string log)
         {
             database = D;
+            logInfo = log;
             InitializeComponent();
         }
 
@@ -85,15 +89,27 @@ namespace Management_Program
                 }
                 else
                 {
-                    if (Amount < 0)
+                    database.GetElement(index).SetAmount(Amount);
+
+                    try
                     {
-                        MessageBox.Show("Amount Cannot Be Negative")
+                        string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
+                        OleDbConnection con = new OleDbConnection(conString);
+                        OleDbCommand add = new OleDbCommand();
+                        add.CommandType = System.Data.CommandType.Text;
+                        add.CommandText = "update " + logInfo + " set Quantity = ? where Item = '" + Name + "';";
+                        add.Parameters.AddWithValue("@Quantity", Amount);
+                        add.Connection = con;
+                        con.Open();
+                        add.ExecuteNonQuery();
+                        con.Close();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        database.GetElement(index).SetAmount(Amount);
-                        ChangeCheck = true;
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
+
+                    ChangeCheck = true;
                 }
             }
             if (ChangeCheck)

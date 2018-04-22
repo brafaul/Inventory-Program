@@ -24,10 +24,6 @@ namespace Management_Program
         {
             InitializeComponent();
         }
-        private void ColorBlock_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            BlockColor = ColorBlock.Text;
-        }
 
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
@@ -39,6 +35,65 @@ namespace Management_Program
         {
             DialogResult = false;
             this.Close();
+        }
+
+        private void DropBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void White_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "White";
+            DropBox.IsDropDownOpen = false;
+        }
+
+        private void Red_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Red";
+            DropBox.IsDropDownOpen = false;
+        }
+
+        private void Blue_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Blue";
+            DropBox.IsDropDownOpen = false;
+        }
+
+        private void Green_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Green";
+            DropBox.IsDropDownOpen = false;
+        }
+
+        private void Gray_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Gray";
+            DropBox.IsDropDownOpen = false;
+        }
+
+        private void Yellow_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Yellow";
+            DropBox.IsDropDownOpen = false;
+        }
+
+        private void Default_Click(object sender, RoutedEventArgs e)
+        {
+            BlockColor = "Snow";
+            DropBox.IsDropDownOpen = false;
+        }
+
+        private void DropBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                DropBox.IsDropDownOpen = true;
+            }
+            else if(e.Key == Key.Escape)
+            {
+                DropBox.IsDropDownOpen = false;
+            }
         }
     }
 }

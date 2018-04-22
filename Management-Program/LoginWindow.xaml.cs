@@ -1,4 +1,4 @@
-﻿//Name: LoginWindow.xaml.cs
+//Name: LoginWindow.xaml.cs
 //Purpose: Adds interaction logic for the login page
 //Author: Brayden Faulkner
 using System;
@@ -88,5 +88,24 @@ namespace Management_Program
 
         }
 
+        private void PassBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
+        }
+
+        private void ClickHere_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            SignupWindow signup = new SignupWindow();
+            signup.Owner = this;
+            signup.ShowDialog();
+            if (signup.DialogResult.HasValue && signup.DialogResult.Value)
+            {
+                MessageBox.Show("Thank you! You are now signed up!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
+            else
+                this.Show();
+        }
     }
 }
