@@ -33,44 +33,46 @@ namespace Management_Program
         private void SignUp_Click(object sender, RoutedEventArgs e)
         {
             string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
-            if (PassBox.Password.ToString() == PassBoxConfirm.Password.ToString() && PassBox.Password.Length != 0)
+
+            if (UserBox.Text != "Users")
             {
-                try
+                if (PassBox.Password.ToString() == PassBoxConfirm.Password.ToString() && PassBox.Password.Length != 0)
                 {
-                    OleDbConnection con = new OleDbConnection(conString);
-                    OleDbCommand insert = new OleDbCommand();
-                    insert.CommandType = System.Data.CommandType.Text;
-                    insert.CommandText = "insert into Users ([Username], [Password]) values (?, ?);";
-                    insert.Parameters.AddWithValue("@Username", UserBox.Text);
-                    insert.Parameters.AddWithValue("@Password", PassBox.Password.ToString());
+                    try
+                    {
+                        OleDbConnection con = new OleDbConnection(conString);
+                        OleDbCommand insert = new OleDbCommand();
+                        insert.CommandType = System.Data.CommandType.Text;
+                        insert.CommandText = "insert into Users ([Username], [Password]) values (?, ?);";
+                        insert.Parameters.AddWithValue("@Username", UserBox.Text);
+                        insert.Parameters.AddWithValue("@Password", PassBox.Password.ToString());
 
-                    OleDbCommand addTable = new OleDbCommand();
-                    addTable.CommandType = System.Data.CommandType.Text;
-                    addTable.CommandText = "CREATE TABLE " + UserBox.Text + " (Item text, Quantity text, ID longtext);";
+                        OleDbCommand addTable = new OleDbCommand();
+                        addTable.CommandType = System.Data.CommandType.Text;
+                        addTable.CommandText = "CREATE TABLE " + UserBox.Text + " (Item text, Quantity text, ID longtext);";
 
-                    insert.Connection = con;
-                    addTable.Connection = con;
+                        insert.Connection = con;
+                        addTable.Connection = con;
 
-                    con.Open();
-                    insert.ExecuteNonQuery();
-                    addTable.ExecuteNonQuery();
-                    con.Close();
+                        con.Open();
+                        insert.ExecuteNonQuery();
+                        addTable.ExecuteNonQuery();
+                        con.Close();
 
-                    /*LoginDataSet set = new LoginDataSet();
-                    set.Users.AddUsersRow(UserBox.Text, PassBox.Password.ToString());
+                        DialogResult = true;
+                    }
 
-                    LoginDataSetTableAdapters.UsersTableAdapter adap = new LoginDataSetTableAdapters.UsersTableAdapter();
-                    adap.Update(set.Users);*/
-
-                    DialogResult = true;
+                    catch (Exception /*ex*/)
+                    {
+                        MessageBox.Show("Your Username is already taken.", "Message", MessageBoxButton.OK, MessageBoxImage.Error);
+                        // MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                else
+                    MessageBox.Show("Your Password is invalid or does not match.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
-                MessageBox.Show("Your Password is invalid or does not match.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("The Username 'Users' is invalid.", "Message", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Cancel_Button_Click(object sender, RoutedEventArgs e)
