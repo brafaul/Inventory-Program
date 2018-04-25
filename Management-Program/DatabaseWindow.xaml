@@ -9,14 +9,14 @@
     <Viewbox>
         <Grid>
             <TextBlock x:Name="ListBlock" Background="Snow" HorizontalAlignment="Left" Margin="522,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="116"/>
-            <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="520,118,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="AddButton_Click"/>
-            <Button x:Name="Remove_Button" Content="Remove" HorizontalAlignment="Left" Margin="520,153,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Remove_Button_Click"/>
-            <Button x:Name="Modify_Button" Content="Modify" HorizontalAlignment="Left" Margin="520,188,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="Modify_Button_Click"/>
-            <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Left" Margin="521,261,0,-38" VerticalAlignment="Top" Width="117" Height="30" Click="Exit_Click"/>
+            <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="520,118,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="AddButton_Click" TabIndex="3"/>
+            <Button x:Name="Remove_Button" Content="Remove" HorizontalAlignment="Left" Margin="520,153,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Remove_Button_Click" TabIndex="4"/>
+            <Button x:Name="Modify_Button" Content="Modify" HorizontalAlignment="Left" Margin="520,188,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="Modify_Button_Click" TabIndex="5"/>
+            <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Left" Margin="521,261,0,-38" VerticalAlignment="Top" Width="117" Height="30" Click="Exit_Click" TabIndex="6"/>
             <Label x:Name="LoginLabel" Content="Logged in as " HorizontalAlignment="Left" Margin="468,-40,0,0" VerticalAlignment="Top" Width="180" FlowDirection="RightToLeft"/>
-            <DataGrid x:Name="DataGrid" HorizontalAlignment="Left" Height="253" Margin="10,38,0,-38" VerticalAlignment="Top" Width="506" SelectionChanged="DataGrid_SelectionChanged"/>
-            <TextBox x:Name="Search" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="426" TextChanged="Search_TextChanged" KeyDown="Search_KeyDown"/>
-            <Button x:Name="Search_Button" Content="Search" HorizontalAlignment="Left" Margin="441,10,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Search_Button_Click"/>
+            <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="253" Margin="10,38,0,-38" VerticalAlignment="Top" Width="506" SelectionChanged="DataGrid_SelectionChanged"/>
+            <TextBox x:Name="Search" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="426" TextChanged="Search_TextChanged" KeyDown="Search_KeyDown" TabIndex="1"/>
+            <Button x:Name="Search_Button" Content="Search" HorizontalAlignment="Left" Margin="441,10,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Search_Button_Click" TabIndex="2"/>
         </Grid>
     </Viewbox>
 </Window>

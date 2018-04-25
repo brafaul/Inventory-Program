@@ -62,7 +62,7 @@ namespace Management_Program
             adapter.Fill(dt);
             con.Close();
             database2 = dt;
-            DataGrid.ItemsSource = database2.DefaultView;
+            dataGrid.ItemsSource = database2.DefaultView;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
@@ -126,7 +126,7 @@ namespace Management_Program
                 DataView dv = searchTable.DefaultView;
                 dv.RowFilter = string.Format("Item like '%{0}%'", Search.Text);
                 searchTable = dv.ToTable();
-                DataGrid.ItemsSource = searchTable.DefaultView;
+                dataGrid.ItemsSource = searchTable.DefaultView;
 
                 Search_Button.Content = "Cancel";
                 isClicked = true;
@@ -138,7 +138,7 @@ namespace Management_Program
                 DataView dv = searchTable.DefaultView;
                 dv.RowFilter = string.Format("Item like '%{0}%'", Search.Text);
                 searchTable = dv.ToTable();
-                DataGrid.ItemsSource = searchTable.DefaultView;
+                dataGrid.ItemsSource = searchTable.DefaultView;
 
                 isClicked = false;
                 Search_Button.Content = "Search";
@@ -153,7 +153,7 @@ namespace Management_Program
                 DataView dv = searchTable.DefaultView;
                 dv.RowFilter = string.Format("Item like '%{0}%'", Search.Text);
                 searchTable = dv.ToTable();
-                DataGrid.ItemsSource = searchTable.DefaultView;
+                dataGrid.ItemsSource = searchTable.DefaultView;
 
                 Search_Button.Content = "Cancel";
                 isClicked = true;
@@ -165,7 +165,7 @@ namespace Management_Program
                 DataView dv = searchTable.DefaultView;
                 dv.RowFilter = string.Format("Item like '%{0}%'", Search.Text);
                 searchTable = dv.ToTable();
-                DataGrid.ItemsSource = searchTable.DefaultView;
+                dataGrid.ItemsSource = searchTable.DefaultView;
 
                 isClicked = false;
                 Search_Button.Content = "Search";

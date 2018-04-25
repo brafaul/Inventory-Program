@@ -79,5 +79,23 @@ namespace Management_Program
         {
             this.Close();
         }
+
+        private void UserBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                PassBox.Focus();
+        }
+
+        private void PassBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                PassBoxConfirm.Focus();
+        }
+
+        private void PassBoxConfirm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                SignUp.Focus();
+        }
     }
 }

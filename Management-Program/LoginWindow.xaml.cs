@@ -21,14 +21,6 @@ namespace Management_Program
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
 
-    public static class MyExt
-    {
-        public static void PerformClick(this Button btn)
-        {
-            btn.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
-        }
-    }
-
     public partial class LoginWindow : Window
     {
         public LoginWindow()
@@ -74,13 +66,13 @@ namespace Management_Program
         private void UserBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
-                UserBox.Focus();
+                PassBox.Focus();
         }
 
         private void PassBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
-                LoginButton.PerformClick();
+                LoginButton.Focus();
         }
 
         private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
