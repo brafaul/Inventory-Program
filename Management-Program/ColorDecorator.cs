@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Name: ColorDecorator.cs
+//Purpose: Decorator that changes the background color of the textblock
+//Author: Brayden Faulkner
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

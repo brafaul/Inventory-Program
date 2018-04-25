@@ -19,6 +19,7 @@ namespace Management_Program
     /// </summary>
     public partial class SettingsWindow : Window
     {
+        public string WinColor;
         public string BlockColor;
         public SettingsWindow()
         {
@@ -94,6 +95,48 @@ namespace Management_Program
             {
                 DropBox.IsDropDownOpen = false;
             }
+        }
+
+        private void WWhite_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = "White";
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WRed_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = "Red";
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WBlue_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = "Blue";
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WGreen_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = "Yellow";
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WGray_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = "Gray";
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WYellow_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = "Yellow";
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WDefault_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = "Default";
+            WindowBox.IsDropDownOpen = false;
         }
     }
 }

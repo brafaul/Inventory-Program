@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Name: BlockDecorator.cs
+//Purpose: Abstract blockdecorator that is overwritten by other decoratos
+//Author: Brayden Faulkner
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
