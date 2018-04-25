@@ -11,6 +11,7 @@ namespace Management_Program
     class ColorDecorator : BlockDecortator
     {
         TextBlock currBlock;
+        DataGrid currGrid;
         String Color;
         BlockWidget wid;
         public ColorDecorator(string C, BlockWidget W):base(W)
