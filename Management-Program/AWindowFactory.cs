@@ -9,6 +9,5 @@ namespace Management_Program
 {
     public abstract class AWindowFactory
     {
-        public abstract Window BuildWindow();
     }
 }

@@ -39,7 +39,9 @@ namespace Management_Program
             database2 = dt;
             settingsColor = color;
             LoginLabel.Content += logInfo;
+            backColor = B;
             BlockBuild();
+            this.Background = backColor;
         }
 
         public void BlockBuild()
@@ -67,7 +69,8 @@ namespace Management_Program
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddWindow add = new AddWindow(database, logInfo);
+            AddFac fac = new AddFac(database, logInfo, backColor);
+            AddWindow add = fac.BuildWindow();
             add.Owner = this;
             add.ShowDialog();
             if (add.DialogResult.HasValue && add.DialogResult.Value)
@@ -93,7 +96,8 @@ namespace Management_Program
 
         private void Modify_Button_Click(object sender, RoutedEventArgs e)
         {
-            ModifyWindow mod = new ModifyWindow(database, logInfo);
+            ModifyFac fac = new ModifyFac(database, logInfo, backColor);
+            ModifyWindow mod = fac.BuildWindow();
             mod.Owner = this;
             mod.ShowDialog();
             if (mod.DialogResult.HasValue && mod.DialogResult.Value)

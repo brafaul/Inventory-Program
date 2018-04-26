@@ -75,6 +75,7 @@ namespace Management_Program
                 settingsColor = set.BlockColor;
                 backColor = set.WinColor;
                 this.Background = backColor;
+                Bground.Background = backColor;
             }
         }
 
