@@ -12,6 +12,6 @@ namespace Management_Program
 {
     public abstract class BlockDecortator: BlockWidget
     {
-        public abstract TextBlock Draw();
+        public abstract DataGrid Draw();
     }
 }

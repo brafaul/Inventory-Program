@@ -13,7 +13,6 @@ namespace Management_Program
 {
     class ColorDecorator : BlockDecortator
     {
-        TextBlock currBlock;
         DataGrid currGrid;
         String Color;
         BlockWidget wid;
@@ -22,12 +21,13 @@ namespace Management_Program
             Color = C;
             wid = W;
         }
-        override public TextBlock Draw()
+        override public DataGrid Draw()
         {
-            currBlock = wid.Draw();
+            currGrid = wid.Draw();
             SolidColorBrush brush = (SolidColorBrush)new BrushConverter().ConvertFromString(Color);
-            currBlock.Background = brush;
-            return currBlock;
+            currGrid.AlternatingRowBackground = brush;
+            currGrid.Background = brush;
+            return currGrid;
         }
     }
 }

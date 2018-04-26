@@ -46,12 +46,6 @@ namespace Management_Program
 
         public void BlockBuild()
         {
-            BlockField block = new BlockField(ListBlock);
-            TextDecorator dec = new TextDecorator(block, database);
-            ColorDecorator dec2 = new ColorDecorator(settingsColor, block);
-            ListBlock = dec.Draw();
-            ListBlock = dec2.Draw();
-
             DataTable dt = new DataTable();
             string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
             OleDbConnection con = new OleDbConnection(conString);
@@ -64,6 +58,9 @@ namespace Management_Program
             adapter.Fill(dt);
             con.Close();
             database2 = dt;
+            BlockField block = new BlockField(dataGrid);
+            ColorDecorator decorator = new ColorDecorator(settingsColor, block);
+            dataGrid = decorator.Draw();
             dataGrid.ItemsSource = database2.DefaultView;
         }
 

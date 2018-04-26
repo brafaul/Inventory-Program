@@ -8,7 +8,6 @@
         Title="DatabaseWindow" Height="450" Width="800">
     <Viewbox>
         <Grid>
-            <TextBlock x:Name="ListBlock" Background="Snow" HorizontalAlignment="Left" Margin="522,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="75" Width="116"/>
             <Button x:Name="AddButton" Content="Add" HorizontalAlignment="Left" Margin="520,118,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="AddButton_Click" TabIndex="3"/>
             <Button x:Name="Remove_Button" Content="Remove" HorizontalAlignment="Left" Margin="520,153,0,0" VerticalAlignment="Top" Width="117" Height="30" Click="Remove_Button_Click" TabIndex="4"/>
             <Button x:Name="Modify_Button" Content="Modify" HorizontalAlignment="Left" Margin="520,188,0,0" VerticalAlignment="Top" Width="118" Height="30" Click="Modify_Button_Click" TabIndex="5"/>
