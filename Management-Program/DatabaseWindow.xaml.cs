@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Configuration;
+using System.Data.OleDb;
 
 namespace Management_Program
 {
@@ -19,24 +22,23 @@ namespace Management_Program
     /// </summary>
     public partial class DatabaseWindow : Window
     {
-        public SolidColorBrush BackColor = Brushes.Snow;
         public string logInfo = null;
         string settingsColor = null;
         TDatabase database = new TDatabase();
+        DataTable database2 = new DataTable();
 
         public DatabaseWindow()
         {
             InitializeComponent();
         }
-        public DatabaseWindow(string log, TDatabase db, string color, SolidColorBrush brush)
+        public DatabaseWindow(string log, TDatabase db, string color, DataTable dt)
         {
             InitializeComponent();
             logInfo = log;
             database = db;
+            database2 = dt;
             settingsColor = color;
             LoginLabel.Content += logInfo;
-            BackColor = brush;
-            this.Background = BackColor;
             BlockBuild();
         }
 
@@ -47,12 +49,25 @@ namespace Management_Program
             ColorDecorator dec2 = new ColorDecorator(settingsColor, block);
             ListBlock = dec.Draw();
             ListBlock = dec2.Draw();
+
+            DataTable dt = new DataTable();
+            string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
+            OleDbConnection con = new OleDbConnection(conString);
+            OleDbCommand cmd = new OleDbCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from " + logInfo + ";";
+            cmd.Connection = con;
+            con.Open();
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            adapter.Fill(dt);
+            con.Close();
+            database2 = dt;
+            dataGrid.ItemsSource = database2.DefaultView;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddFac fac = new AddFac(database, logInfo, BackColor);
-            AddWindow add = fac.BuildWindow();
+            AddWindow add = new AddWindow(database, logInfo);
             add.Owner = this;
             add.ShowDialog();
             if (add.DialogResult.HasValue && add.DialogResult.Value)
@@ -77,8 +92,7 @@ namespace Management_Program
 
         private void Modify_Button_Click(object sender, RoutedEventArgs e)
         {
-            ModifyFac fac = new ModifyFac(database,logInfo,BackColor);
-            ModifyWindow mod = fac.BuildWindow();
+            ModifyWindow mod = new ModifyWindow(database, logInfo);
             mod.Owner = this;
             mod.ShowDialog();
             if (mod.DialogResult.HasValue && mod.DialogResult.Value)
@@ -96,6 +110,66 @@ namespace Management_Program
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
+
+        bool isClicked = false;
+        private void Search_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (isClicked == false)
+            {
+                DataTable searchTable = database2;
+                DataView dv = searchTable.DefaultView;
+                dv.RowFilter = string.Format("Item like '%{0}%'", Search.Text);
+                searchTable = dv.ToTable();
+                dataGrid.ItemsSource = searchTable.DefaultView;
+
+                Search_Button.Content = "Cancel";
+                isClicked = true;
+            }
+            else if (isClicked == true)
+            {
+                Search.Text = String.Empty;
+                DataTable searchTable = database2;
+                DataView dv = searchTable.DefaultView;
+                dv.RowFilter = string.Format("Item like '%{0}%'", Search.Text);
+                searchTable = dv.ToTable();
+                dataGrid.ItemsSource = searchTable.DefaultView;
+
+                isClicked = false;
+                Search_Button.Content = "Search";
+            }
+        }
+
+        private void Search_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                DataTable searchTable = database2;
+                DataView dv = searchTable.DefaultView;
+                dv.RowFilter = string.Format("Item like '%{0}%'", Search.Text);
+                searchTable = dv.ToTable();
+                dataGrid.ItemsSource = searchTable.DefaultView;
+
+                Search_Button.Content = "Cancel";
+                isClicked = true;
+            }
+            if(e.Key == Key.Escape)
+            {
+                Search.Text = String.Empty;
+                DataTable searchTable = database2;
+                DataView dv = searchTable.DefaultView;
+                dv.RowFilter = string.Format("Item like '%{0}%'", Search.Text);
+                searchTable = dv.ToTable();
+                dataGrid.ItemsSource = searchTable.DefaultView;
+
+                isClicked = false;
+                Search_Button.Content = "Search";
+            }
         }
     }
 }
