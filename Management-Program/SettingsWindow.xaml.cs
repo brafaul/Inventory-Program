@@ -19,10 +19,12 @@ namespace Management_Program
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public string WinColor;
+        public SolidColorBrush WinColor;
         public string BlockColor;
-        public SettingsWindow()
+        public SettingsWindow(string B, SolidColorBrush W)
         {
+            BlockColor = B;
+            WinColor = W;
             InitializeComponent();
         }
 
@@ -99,43 +101,50 @@ namespace Management_Program
 
         private void WWhite_Click(object sender, RoutedEventArgs e)
         {
-            WinColor = "White";
+            WinColor = Brushes.White;
+            this.Background = WinColor;
             WindowBox.IsDropDownOpen = false;
         }
 
         private void WRed_Click(object sender, RoutedEventArgs e)
         {
-            WinColor = "Red";
+            WinColor = Brushes.Red;
+            this.Background = WinColor;
             WindowBox.IsDropDownOpen = false;
         }
 
         private void WBlue_Click(object sender, RoutedEventArgs e)
         {
-            WinColor = "Blue";
+            WinColor = Brushes.Blue;
+            this.Background = WinColor;
             WindowBox.IsDropDownOpen = false;
         }
 
         private void WGreen_Click(object sender, RoutedEventArgs e)
         {
-            WinColor = "Yellow";
+            WinColor = Brushes.Green;
+            this.Background = WinColor;
             WindowBox.IsDropDownOpen = false;
         }
 
         private void WGray_Click(object sender, RoutedEventArgs e)
         {
-            WinColor = "Gray";
+            WinColor = Brushes.Gray;
+            this.Background = WinColor;
             WindowBox.IsDropDownOpen = false;
         }
 
         private void WYellow_Click(object sender, RoutedEventArgs e)
         {
-            WinColor = "Yellow";
+            WinColor = Brushes.Yellow;
+            this.Background = WinColor;
             WindowBox.IsDropDownOpen = false;
         }
 
         private void WDefault_Click(object sender, RoutedEventArgs e)
         {
-            WinColor = "Default";
+            WinColor = Brushes.Snow;
+            this.Background = WinColor;
             WindowBox.IsDropDownOpen = false;
         }
     }

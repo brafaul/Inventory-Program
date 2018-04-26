@@ -24,6 +24,7 @@ namespace Management_Program
     /// </summary>
     public partial class MainWindow : Window
     {
+        SolidColorBrush BackColor = Brushes.Snow;
         bool logCheck = false;
         string logInfo = null;
         string settingsColor = "Snow";
@@ -63,15 +64,17 @@ namespace Management_Program
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            SettingsWindow set = new SettingsWindow();
+            SettingsWindow set = new SettingsWindow(settingsColor, BackColor);
             set.Owner = this;
             set.ShowDialog();
             if(set.DialogResult.HasValue && set.DialogResult.Value)
             {
                 settingsColor = set.BlockColor;
+                BackColor = set.WinColor;
+                this.Bground.Background = BackColor;
+                this.Background = BackColor;
             }
         }
-
         private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -114,7 +117,7 @@ namespace Management_Program
                     MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                DatabaseWindow data = new DatabaseWindow(logInfo, database, settingsColor);
+                DatabaseWindow data = new DatabaseWindow(logInfo, database, settingsColor, BackColor);
                 data.Owner = this;
                 data.ShowDialog();
                 if (data.DialogResult.HasValue)

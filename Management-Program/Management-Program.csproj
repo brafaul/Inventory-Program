@@ -54,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddFac.cs" />
+    <Compile Include="AWindowFactory.cs" />
     <Compile Include="BlockDecortator.cs" />
     <Compile Include="ColorDecorator.cs" />
     <Compile Include="DatabaseWindow.xaml.cs">
@@ -67,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LoginDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ModifyFac.cs" />
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>

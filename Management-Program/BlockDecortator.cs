@@ -12,16 +12,6 @@ namespace Management_Program
 {
     public abstract class BlockDecortator: BlockWidget
     {
-        private TextBlock currBlock;
-        private BlockWidget wid;
-        public BlockDecortator(BlockWidget W)
-        {
-            wid = W;
-        }
-        public TextBlock Draw()
-        {
-            currBlock = wid.Draw();
-            return currBlock;
-        }
+        public abstract TextBlock Draw();
     }
 }

@@ -19,6 +19,7 @@ namespace Management_Program
     /// </summary>
     public partial class DatabaseWindow : Window
     {
+        public SolidColorBrush BackColor = Brushes.Snow;
         public string logInfo = null;
         string settingsColor = null;
         TDatabase database = new TDatabase();
@@ -27,13 +28,15 @@ namespace Management_Program
         {
             InitializeComponent();
         }
-        public DatabaseWindow(string log, TDatabase db, string color)
+        public DatabaseWindow(string log, TDatabase db, string color, SolidColorBrush brush)
         {
             InitializeComponent();
             logInfo = log;
             database = db;
             settingsColor = color;
             LoginLabel.Content += logInfo;
+            BackColor = brush;
+            this.Background = BackColor;
             BlockBuild();
         }
 
@@ -48,7 +51,8 @@ namespace Management_Program
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddWindow add = new AddWindow(database, logInfo);
+            AddFac fac = new AddFac(database, logInfo, BackColor);
+            AddWindow add = fac.BuildWindow();
             add.Owner = this;
             add.ShowDialog();
             if (add.DialogResult.HasValue && add.DialogResult.Value)
@@ -73,7 +77,8 @@ namespace Management_Program
 
         private void Modify_Button_Click(object sender, RoutedEventArgs e)
         {
-            ModifyWindow mod = new ModifyWindow(database, logInfo);
+            ModifyFac fac = new ModifyFac(database,logInfo,BackColor);
+            ModifyWindow mod = fac.BuildWindow();
             mod.Owner = this;
             mod.ShowDialog();
             if (mod.DialogResult.HasValue && mod.DialogResult.Value)

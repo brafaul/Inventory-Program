@@ -16,12 +16,12 @@ namespace Management_Program
         TextBlock currBlock;
         String Color;
         BlockWidget wid;
-        public ColorDecorator(string C, BlockWidget W):base(W)
+        public ColorDecorator(string C, BlockWidget W)
         {
             Color = C;
             wid = W;
         }
-        public TextBlock Draw()
+        override public TextBlock Draw()
         {
             currBlock = wid.Draw();
             SolidColorBrush brush = (SolidColorBrush)new BrushConverter().ConvertFromString(Color);

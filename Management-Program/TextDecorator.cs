@@ -13,12 +13,12 @@ namespace Management_Program
         TextBlock CurrBlock;
         TDatabase database;
         BlockWidget wid;
-        public TextDecorator(BlockWidget W, TDatabase D):base(W)
+        public TextDecorator(BlockWidget W, TDatabase D)
         {
             wid = W;
             database = D;
         }
-        public TextBlock Draw()
+        override public TextBlock Draw()
         {
             CurrBlock = wid.Draw();
             CurrBlock.Text = String.Empty;
