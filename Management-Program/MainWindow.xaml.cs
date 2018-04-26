@@ -29,6 +29,7 @@ namespace Management_Program
         bool logCheck = false;
         string logInfo = null;
         string settingsColor = "Snow";
+        SolidColorBrush backColor = Brushes.Snow;
         public MainWindow()
         {
             InitializeComponent();
@@ -65,13 +66,15 @@ namespace Management_Program
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            SetFac fac = new SetFac(settingsColor, BackColor);
+            SetFac fac = new SetFac(settingsColor, backColor);
             SettingsWindow set = fac.BuildWindow();
             set.Owner = this;
             set.ShowDialog();
             if(set.DialogResult.HasValue && set.DialogResult.Value)
             {
                 settingsColor = set.BlockColor;
+                backColor = set.WinColor;
+                this.Background = backColor;
             }
         }
 
@@ -128,7 +131,7 @@ namespace Management_Program
                     MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                DatabaseWindow data = new DatabaseWindow(logInfo, database, settingsColor, dt2);
+                DatabaseWindow data = new DatabaseWindow(logInfo, database, settingsColor, dt2, backColor);
                 data.Owner = this;
                 data.ShowDialog();
                 if (data.DialogResult.HasValue)

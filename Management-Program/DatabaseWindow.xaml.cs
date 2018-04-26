@@ -26,12 +26,12 @@ namespace Management_Program
         string settingsColor = null;
         TDatabase database = new TDatabase();
         DataTable database2 = new DataTable();
-
+        SolidColorBrush backColor = Brushes.Snow;
         public DatabaseWindow()
         {
             InitializeComponent();
         }
-        public DatabaseWindow(string log, TDatabase db, string color, DataTable dt)
+        public DatabaseWindow(string log, TDatabase db, string color, DataTable dt, SolidColorBrush B)
         {
             InitializeComponent();
             logInfo = log;
@@ -80,7 +80,7 @@ namespace Management_Program
 
         private void Remove_Button_Click(object sender, RoutedEventArgs e)
         {
-            RemFac fac = new RemFac(database, logInfo, BackColor);
+            RemFac fac = new RemFac(database, logInfo, backColor);
             RemoveWindow rem = fac.BuildWindow();
             rem.Owner = this;
             rem.ShowDialog();
