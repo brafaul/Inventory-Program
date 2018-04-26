@@ -19,9 +19,12 @@ namespace Management_Program
     /// </summary>
     public partial class SettingsWindow : Window
     {
+        public SolidColorBrush WinColor;
         public string BlockColor;
-        public SettingsWindow()
+        public SettingsWindow(string B, SolidColorBrush W)
         {
+            BlockColor = B;
+            WinColor = W;
             InitializeComponent();
         }
 
@@ -94,6 +97,55 @@ namespace Management_Program
             {
                 DropBox.IsDropDownOpen = false;
             }
+        }
+
+        private void WWhite_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = Brushes.White;
+            this.Background = WinColor;
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WRed_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = Brushes.Red;
+            this.Background = WinColor;
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WBlue_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = Brushes.Blue;
+            this.Background = WinColor;
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WGreen_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = Brushes.Green;
+            this.Background = WinColor;
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WGray_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = Brushes.Gray;
+            this.Background = WinColor;
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WYellow_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = Brushes.Yellow;
+            this.Background = WinColor;
+            WindowBox.IsDropDownOpen = false;
+        }
+
+        private void WDefault_Click(object sender, RoutedEventArgs e)
+        {
+            WinColor = Brushes.Snow;
+            this.Background = WinColor;
+            WindowBox.IsDropDownOpen = false;
         }
     }
 }

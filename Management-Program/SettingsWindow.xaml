@@ -8,10 +8,10 @@
         Title="SettingsWindow" Height="300" Width="300">
     <Viewbox>
         <Grid>
-            <Label Content="Background Color" HorizontalAlignment="Center" Margin="10,10,179,0" VerticalAlignment="Top"/>
+            <Label Content="List Color" HorizontalAlignment="Center" Margin="10,10,179,0" VerticalAlignment="Top"/>
             <Button x:Name="ConfirmButton" Content="Confirm" HorizontalAlignment="Left" Margin="163,239,0,0" VerticalAlignment="Top" Width="75" Click="ConfirmButton_Click" TabIndex="2" />
             <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="38,239,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click" TabIndex="3" />
-            <ComboBox x:Name="DropBox" HorizontalAlignment="Left" Margin="118,14,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="DropBox_SelectionChanged" TabIndex="1" KeyDown="DropBox_KeyDown" >
+            <ComboBox x:Name="DropBox" Margin="118,14,11,0" VerticalAlignment="Top" SelectionChanged="DropBox_SelectionChanged" TabIndex="1" KeyDown="DropBox_KeyDown" >
                 <Button x:Name="White" Content="White" Width="110" Click="White_Click"/>
                 <Button x:Name="Red" Content="Red" Width="110" Click="Red_Click"/>
                 <Button x:Name="Blue" Content="Blue" Width="110" Click="Blue_Click"/>
@@ -20,6 +20,16 @@
                 <Button x:Name="Yellow" Content="Yellow" Width="110" Click="Yellow_Click"/>
                 <Button x:Name="Default" Content="Default" Width="110" Click="Default_Click"/>
             </ComboBox>
+            <ComboBox x:Name="WindowBox" HorizontalAlignment="Left" Margin="118,60,0,0" VerticalAlignment="Top" Width="120">
+                <Button x:Name="WWhite" Content="White" Width="110" Click="WWhite_Click"/>
+                <Button x:Name="WRed" Content="Red" Width="110" Click="WRed_Click"/>
+                <Button x:Name="WBlue" Content="Blue" Width="110" Click="WBlue_Click"/>
+                <Button x:Name="WGreen" Content="Green" Width="110" Click="WGreen_Click"/>
+                <Button x:Name="WGray" Content="Gray" Width="110" Click="WGray_Click" RenderTransformOrigin="0.481,0.481"/>
+                <Button x:Name="WYellow" Content="Yellow" Width="110" Click="WYellow_Click"/>
+                <Button x:Name="WDefault" Content="Default" Width="110" Click="WDefault_Click"/>
+            </ComboBox>
+            <Label Content="Window Color" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.08,0.639"/>
         </Grid>
     </Viewbox>
 </Window>

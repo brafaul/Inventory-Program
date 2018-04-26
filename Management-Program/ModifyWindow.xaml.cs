@@ -28,7 +28,7 @@ namespace Management_Program
         string tempAmount = null;
         string ID = null;
         int Amount;
-        string Name = null;
+        new string Name = null;
         bool IndexCheck = false;
         bool ChangeCheck = false;
         public string logInfo;

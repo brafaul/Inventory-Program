@@ -1,4 +1,4 @@
-﻿//Name:MainWindow.xaml.cs
+//Name:MainWindow.xaml.cs
 //Purpose: Establishes back logic for main window 
 //Authors: Brayden Faulkner and Jon Sulcer
 using System;
