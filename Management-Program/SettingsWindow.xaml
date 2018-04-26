@@ -30,6 +30,8 @@
                 <Button x:Name="WDefault" Content="Default" Width="110" Click="WDefault_Click"/>
             </ComboBox>
             <Label Content="Window Color" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.08,0.639"/>
+            <Label x:Name="ListLabel" Content="Default" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Height="26" Width="120" IsHitTestVisible="False"/>
+            <Label x:Name="WindowLabel" Content="Default" HorizontalAlignment="Left" Margin="118,56,0,0" VerticalAlignment="Top" Width="120" IsHitTestVisible="False"/>
         </Grid>
     </Viewbox>
 </Window>
