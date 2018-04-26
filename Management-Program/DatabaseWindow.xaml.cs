@@ -65,7 +65,8 @@ namespace Management_Program
 
         private void Remove_Button_Click(object sender, RoutedEventArgs e)
         {
-            RemoveWindow rem = new RemoveWindow(database, logInfo);
+            RemFac fac = new RemFac(database, logInfo, BackColor);
+            RemoveWindow rem = fac.BuildWindow();
             rem.Owner = this;
             rem.ShowDialog();
             if (rem.DialogResult.HasValue && rem.DialogResult.Value)

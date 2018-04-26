@@ -64,7 +64,8 @@ namespace Management_Program
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            SettingsWindow set = new SettingsWindow(settingsColor, BackColor);
+            SetFac fac = new SetFac(settingsColor, BackColor);
+            SettingsWindow set = fac.BuildWindow();
             set.Owner = this;
             set.ShowDialog();
             if(set.DialogResult.HasValue && set.DialogResult.Value)

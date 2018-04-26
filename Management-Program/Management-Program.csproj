@@ -70,6 +70,8 @@
       <DependentUpon>LoginDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ModifyFac.cs" />
+    <Compile Include="RemFac.cs" />
+    <Compile Include="SetFac.cs" />
     <Compile Include="SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
