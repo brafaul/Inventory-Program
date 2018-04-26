@@ -97,7 +97,7 @@ namespace Management_Program
                 this.Close();
             }
             else
-                this.Show();
+                this.Close();
         }
     }
 }
