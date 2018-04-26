@@ -1,4 +1,4 @@
-﻿//Name:MainWindow.xaml.cs
+//Name:MainWindow.xaml.cs
 //Purpose: Establishes back logic for main window 
 //Authors: Brayden Faulkner and Jon Sulcer
 using System;
@@ -16,6 +16,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.OleDb;
+using System.Data;
+using System.Configuration;
 
 namespace Management_Program
 {
@@ -24,7 +26,6 @@ namespace Management_Program
     /// </summary>
     public partial class MainWindow : Window
     {
-        SolidColorBrush BackColor = Brushes.Snow;
         bool logCheck = false;
         string logInfo = null;
         string settingsColor = "Snow";
@@ -71,11 +72,9 @@ namespace Management_Program
             if(set.DialogResult.HasValue && set.DialogResult.Value)
             {
                 settingsColor = set.BlockColor;
-                BackColor = set.WinColor;
-                this.Bground.Background = BackColor;
-                this.Background = BackColor;
             }
         }
+
         private void UserBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -87,6 +86,7 @@ namespace Management_Program
             {
                 this.Hide();
                 TDatabase database = new TDatabase();
+                DataTable dt2 = new DataTable();
 
                 try
                 {
@@ -97,9 +97,15 @@ namespace Management_Program
                     string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Login.accdb";
                     OleDbConnection con = new OleDbConnection(conString);
                     OleDbCommand cmd = new OleDbCommand();
-                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "select * from " + logInfo + ";";
                     cmd.Connection = con;
+
+                    OleDbCommand cmd2 = new OleDbCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "select * from " + logInfo + ";";
+                    cmd2.Connection = con;
+
                     con.Open();
                     OleDbDataReader read = cmd.ExecuteReader();
                     while (read.Read())
@@ -111,6 +117,10 @@ namespace Management_Program
 
                         database.AddObject(currentItem, currentQ, currentID);
                     }
+
+                    OleDbDataAdapter adapter = new OleDbDataAdapter(cmd2);
+                    adapter.Fill(dt2);
+
                     con.Close();
                 }
                 catch (Exception ex)
@@ -118,7 +128,7 @@ namespace Management_Program
                     MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
 
-                DatabaseWindow data = new DatabaseWindow(logInfo, database, settingsColor, BackColor);
+                DatabaseWindow data = new DatabaseWindow(logInfo, database, settingsColor, dt2);
                 data.Owner = this;
                 data.ShowDialog();
                 if (data.DialogResult.HasValue)

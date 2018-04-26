@@ -15,7 +15,7 @@
             <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="159,169,0,0" VerticalAlignment="Top" Width="75" Click="LoginButton_Click" TabIndex="3"/>
             <Label x:Name="newLabel" Content="Not Registered?" HorizontalAlignment="Left" Margin="60,229,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.282,0.846" Height="23" Width="94"/>
             <Button x:Name="ClickHere" Content="Click Here" HorizontalAlignment="Left" Margin="159,232,0,0" VerticalAlignment="Top" Width="75" Click="ClickHere_Click" TabIndex="5" RenderTransformOrigin="0.024,-0.638"/>
-            <PasswordBox x:Name="PassBox" HorizontalAlignment="Left" Margin="114,115,0,0" VerticalAlignment="Top" Width="120" Height="23" TabIndex="2"/>
+            <PasswordBox x:Name="PassBox" HorizontalAlignment="Left" Margin="114,115,0,0" VerticalAlignment="Top" Width="120" Height="23" TabIndex="2" KeyDown="PassBox_KeyDown"/>
             <Label Content="Please Login" HorizontalAlignment="Left" Margin="108,29,0,0" VerticalAlignment="Top"/>
         </Grid>
     </Viewbox>
