@@ -135,5 +135,23 @@ namespace Management_Program
             DialogResult = false;
             this.Close();
         }
+
+        private void IDMBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                NameBox.Focus();
+        }
+
+        private void NameBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                ATBox.Focus();
+        }
+
+        private void ATBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                ConfirmButton.Focus();
+        }
     }
 }

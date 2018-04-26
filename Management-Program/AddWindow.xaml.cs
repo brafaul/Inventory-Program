@@ -115,5 +115,23 @@ namespace Management_Program
         {
             IDCheck = true;
         }
+
+        private void NameBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                AmountBox.Focus();
+        }
+
+        private void AmountBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                NumBox.Focus();
+        }
+
+        private void NumBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                EnterButton.Focus();
+        }
     }
 }

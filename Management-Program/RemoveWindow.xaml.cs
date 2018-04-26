@@ -82,5 +82,11 @@ namespace Management_Program
         {
             NameCheck = true;
         }
+
+        private void RemNameBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                ConfirmButton.Focus();
+        }
     }
 }

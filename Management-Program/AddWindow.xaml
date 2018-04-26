@@ -9,13 +9,13 @@
     <Viewbox>
         <Grid>
             <Label x:Name="NameLabel" Content="What is the name of the item you would like to add?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="NameBox" HorizontalAlignment="Center" Height="23" Background="LightGray" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NameBox_TextChanged" TabIndex="1"/>
+            <TextBox x:Name="NameBox" HorizontalAlignment="Center" Height="23" Background="LightGray" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NameBox_TextChanged" TabIndex="1" KeyDown="NameBox_KeyDown"/>
             <Label Content="What is the amount of the item?" HorizontalAlignment="Center" Margin="0,70,0,0" VerticalAlignment="Top"/>
             <Label Content="What is the ID?" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top"/>
             <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="40,210,0,0" VerticalAlignment="Top" Width="75" Click="CancelButton_Click" TabIndex="5"/>
             <Button x:Name="EnterButton" Content="Enter" HorizontalAlignment="Right" Margin="0,210,40,0" VerticalAlignment="Top" Width="75" Click="EnterButton_Click" TabIndex="4"/>
-            <TextBox x:Name="AmountBox" HorizontalAlignment="Center" Background ="LightGray" Height="23" Margin="0,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="AmountBox_TextChanged" TabIndex="2"/>
-            <TextBox x:Name="NumBox" HorizontalAlignment="Center" Height="23" Margin="0,160,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Width="120" TextChanged="NumBox_TextChanged" TabIndex="3"/>
+            <TextBox x:Name="AmountBox" HorizontalAlignment="Center" Background ="LightGray" Height="23" Margin="0,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="AmountBox_TextChanged" TabIndex="2" KeyDown="AmountBox_KeyDown"/>
+            <TextBox x:Name="NumBox" HorizontalAlignment="Center" Height="23" Margin="0,160,0,0" TextWrapping="Wrap" Background="LightGray" VerticalAlignment="Top" Width="120" TextChanged="NumBox_TextChanged" TabIndex="3" KeyDown="NumBox_KeyDown"/>
         </Grid>
     </Viewbox>
 </Window>
