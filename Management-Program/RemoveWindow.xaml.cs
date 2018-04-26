@@ -47,7 +47,6 @@ namespace Management_Program
         {
             if(NameCheck == true)
             {
-                DialogResult = true;
                 RemName = RemNameBox.Text;
 
                 try
@@ -66,9 +65,16 @@ namespace Management_Program
                 {
                     MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-
-                database.RemoveByName(RemName);
-                this.Close();
+                if (database.FindIndexName(RemName) == -1)
+                {
+                    MessageBox.Show("Could not find item " + RemName);
+                }
+                else
+                {
+                    DialogResult = true;
+                    database.RemoveByName(RemName);
+                    this.Close();
+                }
             }
         }
 
