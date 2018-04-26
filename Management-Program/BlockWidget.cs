@@ -12,6 +12,6 @@ namespace Management_Program
 {
     public interface BlockWidget
     {
-        TextBlock Draw();
+        DataGrid Draw();
     }
 }

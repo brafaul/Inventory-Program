@@ -12,14 +12,14 @@ namespace Management_Program
 {
     public class BlockField : BlockWidget
     {
-        TextBlock CurrBlock;
-        public BlockField(TextBlock T)
+        DataGrid CurrGrid;
+        public BlockField(DataGrid T)
         {
-            CurrBlock = T;
+            CurrGrid = T;
         }
-        public TextBlock Draw()
+        public DataGrid Draw()
         {
-            return CurrBlock;
+            return CurrGrid;
         }
     }
 }
