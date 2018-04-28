@@ -375,7 +375,7 @@
 
 
 \begin{document}
-\[\[%
+\[\[\[\[%
 % paper title
 % Titles are generally capitalized except for words such as a, an, and, as,
 % at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
@@ -474,7 +474,7 @@
 % in the abstract or keywords.
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-With this program we wish to provide an inventory management system that can be used by anyone for a variety of types of inventory. The program will allow the user a baseline level of functionality through which they can interact with their inventory. The program will be robust and easy to use and understand to those who may not be familiar with databases or other such software.
+With this program the goal is to provide an inventory management system that can be used by anyone for a variety of types of inventory. The program will allow the user a baseline level of functionality through which they can interact with their inventory. The program will be robust, easy to use, and understand to those who may not be familiar with databases or similar software programs.
 \end{abstract}
 
 %As the comment below states, you usually only do these when you're doing a final submission of a paper, to make it easier to find your work when searching.
@@ -535,8 +535,7 @@ With this program we wish to provide an inventory management system that can be 
 % 
 % Here we have the typical use of a "T" for an initial drop letter
 % and "HIS" in caps to complete the first word.
-With this program we want to help the user track the contents of their inventory as efficiently as we can and provide features to aid them. This means we will have a user specific database filled with the user's inventory and information provided by the user, such as what the inventory is for. This program will be designed with the intention of being usable by virtually anyone who has an inventory to manage. While the program will provided specialized features (which may be things easily set up by the consumer) for things such as restaurants, warehouses, and retail stores; a basic set of features for those cases we do not have the time or imagination to account for. This means that hopefully any user will be able to manage any sort of inventory in a simple and efficient manner.
-
+With this program we want to help the user track the contents of their inventory as efficiently as we can and provide features to aid them. This means we will have a user specific database filled with the user's inventory and information provided by the user, such as what the inventory is for. This program will be designed with the intention of being usable by virtually anyone who has an inventory to manage. At the base level users will be able to add, remove, and modify items in their inventory. The program will be easy to use, and setup in an easy to learn fashion.
 % Should you need to cite anything, use the \emph{cite} keyword, and refer to something from your bibliography.  For example, this was put together with the help of a \LaTeX guide\cite{IEEEhowto:kopka}.
 
 
@@ -650,16 +649,17 @@ With this program we want to help the user track the contents of their inventory
 % \fnbelowfloat command of the stfloats package.
 
 \subsection{Background}
-The main reason we decided to do this program is we thought but on all the similar program we had done in the past and wondered if we could adapt the idea behind some of them into a usable end product. We also thought of all the places that still use ineffective methods to keep track of their inventory due to fear of technology or the misguided view that modernizing would be too expensive.
+The main reason we decided to do this program is we thought about all the similar programs we had done in the past, and decided to adapt the idea behind some of them into a usable end product. We also thought of all the places that still use ineffective methods to keep track of their inventory due to fear of technology or the view that modernizing would be too expensive. By simple we mean that even someone with next to no computer skills would be able to use the program with much difficulty. By efficient we mean the program should be able to run smoothly and without crashing in any conceivable case. 
 
 \subsection{Challenges}
 Two of the biggest problems we anticipate are dealing with working with the databases and the login procedure. Since we plan to use a login, We'll need the login procedure to store what the client has in their inventory and what kind of inventory they have. The databases are sort of an x factor here as since neither of us have extensive experience with databases, so we're not really sure what to expect. 
 
 
 \section{Scope}
-As a minimum, we would like the program to be able to track the inventory, list its contents, be able to manage some sort of data on the inventory, and add and take things away from the inventory as well. As a stretch goal, we will add in some features specialized for retail stores, including tracking profits and the dates items were received. There will also be some features specialized for warehouses, like tracking where and when items are being shipped. Finally, we would like to add in features specialized for a library, such as tracking who has what book and when they should return it. As another stretch goal we would like to add a basic setting screen to change simple things such as text size and background color.
+As a minimum, we would like the program to be able to track each user's inventory, list its contents, and be able to add and remove items from the inventory as well. The user's inventory will be stored in a database, and each user should have their own table. Each item in the inventory should store the name, the amount, and id of the item. The user should also be able to modify the amount of items that are already in their inventory. As a stretch goal, we will add in features specialized for retail stores, including tracking profits and the dates items were received. There will also be some features specialized for warehouses, like tracking where and when items are being shipped. Finally, we would like to add in features specialized for a library, such as tracking who has what book and when they should return it. As another stretch goal we would like to add a basic setting screen to change simple things such as text size and background color.
 \subsection{Requirements}
 % As part of fleshing out the scope of your requirements, you'll also need to keep in mind both your functional and non-functional requirements.  These should be listed, and explained in detail as necessary.  Use this area to explain how you gathered these requirements.
+The program should give the user the ability to add, remove, and modify the amount of items in his or her inventory. Each item in the inventory should store a string for the name, an int for the amount, and a string for the id. Users should only be able to access their inventory after logging in to their account. The accounts should be also be stored in a database. Users that have not used the program before should be able to create a new account. Each account should have its own separate corresponding table in the database that can only be accessed by that account.
 
 \subsubsection{Functional}
 \begin{itemize}
@@ -943,6 +943,8 @@ Biography text here.
 
 % that's all folks
 
+\]
+\]
 \]
 \]
 \end{document}
