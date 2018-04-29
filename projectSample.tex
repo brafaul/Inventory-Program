@@ -665,13 +665,13 @@ The program should give the user the ability to add, remove, and modify the amou
 \begin{itemize}
 \item User needs to have a private inventory
 \item User needs to be able to save and load the correct inventory every time they login
-\item Needs to have a place with sufficient capacity to record all required information, and reliably store it in a database.
+\item User needs to be able to modify their inventory.
 \end{itemize}
 
 \subsubsection{Non-Functional}
 \begin{itemize}
 \item Security -- each user should only be allowed to access their account with the proper username and password
-\item you'll typically have fewer non-functional than functional requirements
+\item Login --  each user should have unique username and password
 \end{itemize}
 
 \subsection{Use Cases}
@@ -708,27 +708,17 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 \begin{itemize}
 \item[Use Case Number:] 1
-\item[Use Case Name:] Remove Fish
-\item[Description:] A fish merchant sells all his cod and wants to remove them from the inventory.
+\item[Use Case Name:] Remove Item
+\item[Description:] A user wants to remove an item from his or her inventory
 \end{itemize}
 
-You will then go on to (minimally) discuss a basic flow for the process:
 
 \begin{enumerate}
-\item User downloads/runs program and selects options to set up his account/inventory.
-\item User adds inventory through a method(?).
-\item User inventory is updated to reflect new items, this also updates the current total.
-\item[Termination Outcome:] The user now has a inventory of items updated and modified through the program.
-\end{enumerate}
-
-You may need to also add in any alternative flows:
-
-Alternative: Item already exists in the inventory
-\begin{enumerate}
-\item User navigates to page detailing the item already exists in inventory
-\item User updates information if necessary on item in inventory.
-\item User inventory is updated to reflect the new item's details, displaying any worthy information about that item.
-\item[Termination Outcome:] The user now has a inventory of items updated and modified through the program.
+\item User logins to his or her account
+\item User navigates to the remove window
+\item User enters in the name of the item he or she would like to remove and hits enter
+\item User inventory is updated to reflect the removal of said item.
+\item[Termination Outcome:] The user no longer has the requested item stored in his or her inventory.
 \end{enumerate}
 
 % You will often also need to include pictures or diagrams.  It is quite common to see use-case diagrams in such write-ups.  To properly reference an image, you will need to use the \texttt{figure} environment and will need to reference it in your text (via the \texttt{ref} command) (see Figure \ref{cat1}).  NOTE: this is not a use case diagram, but a kitten.
@@ -737,19 +727,27 @@ Alternative: Item already exists in the inventory
 
 \begin{itemize}
 \item[Use Case Number:] 2
-\item[Use Case Name:]Fish Merchant Shipment
-\item[Description:] Fish merchant can add their new shipment of cod to the inventory
+\item[Use Case Name:]Add Item
+\item[Description:] A user wants to add an item to his or her inventory
 \end{itemize}
+
+\begin{enumerate}
+\item User logs in to his or her account 
+\item User navigates to the add window
+\item User enters in the name, amount, id of the item they wish to add, and hit enter
+\item User's inventory is updated to reflect the added item
+\item[Termination Outcome:] The user's inventory now contains the requested item
 
 % You will then need to continue to flesh out all use cases you have identified for your project.
 
 \begin{itemize}
-\item[Use Case Number:] 5
+\item[Use Case Number:] 3
 \item[Use Case Name:] Visual Settings/Appeal
 \item[Description:] The user may change visual settings to make the program more usable or appealing.
 \end{itemize}
 
 \begin{enumerate}
+\item Uer logs in to his or her account
 \item User navigates to a settings page.
 \item User changes to desired visual appeals.
 \item Program visuals are updated to reflect the desired visual changes for the program.
@@ -771,10 +769,10 @@ Alternative: Item already exists in the inventory
 
 \section{Project Timeline}
 % Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
-Design: We have already decided on the overall idea and plan of what is to be done as read in the overview of the project, but more specifically the project UML, chosen design patterns, project structure, and interface mockups will also be mostly fleshed out by March 15. \\ \indent
-Implementation: We hope to at a minimum have a working inventory on a at least a very basic level with a simple interface that has a login connected to a user database. Our deadline for this is by April 5. \\ \indent
-Verification: We want to have verified that the program is working by April 15
-Maintenance: We want to spend as much time between the 15th and the due date on maintaining the program
+Design: The design of the program, including interface mockups and UML's was completed by March 15. \\ \indent
+Implementation: The program all front end functionality by April 15. The back end functionality, loading data from and writing data to the databases, was functional by April 25.  \\ \indent
+Verification: We verified that the program was working as intended on April 25.
+Maintenance: The program underwent maintenance from April 25 to April 29.
 
 \section{Project Structure}
 The front end of the program is made up of a main window that provides access to various other windows each in charge of a specific function of the program. For example adding the an item to the list requires the user to navigate to the add window then enter the information about the item. The list is stored in a database. The only time the database and the front end of the program interact is when the user either logs in or exit the program. When the user logs in the list is filled with the information from the database, when the user logs out the list is written out to the database so that the updated information can be loaded next time.
