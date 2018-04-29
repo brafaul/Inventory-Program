@@ -375,7 +375,11 @@
 
 
 \begin{document}
-\[\[\[\[%
+\[
+[\
+[\
+[\
+%
 % paper title
 % Titles are generally capitalized except for words such as a, an, and, as,
 % at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
@@ -406,7 +410,7 @@
 % one-size-fits-all approach a daunting prospect. For instance, compsoc 
 % journal papers have the author affiliations above the "Manuscript
 % received ..."  text while in non-compsoc journals this is reversed. Sigh.
-
+$
 \author{Brayden Faulkner \\ Johnathon Sulcer% <-this % stops a space
 }
 %Generally you should be the only author, so drop Michael Shell's name when you are creating your lab reports
@@ -737,6 +741,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \item User enters in the name, amount, id of the item they wish to add, and hit enter
 \item User's inventory is updated to reflect the added item
 \item[Termination Outcome:] The user's inventory now contains the requested item
+\end{enumerate}
 
 % You will then need to continue to flesh out all use cases you have identified for your project.
 
@@ -747,7 +752,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 \end{itemize}
 
 \begin{enumerate}
-\item Uer logs in to his or her account
+\item User logs in to his or her account
 \item User navigates to a settings page.
 \item User changes to desired visual appeals.
 \item Program visuals are updated to reflect the desired visual changes for the program.
@@ -755,7 +760,7 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 
 \begin{figure}[ht!]
-% \includegraphics[height=250px, width=350px]{cat1.jpg}
+\includegraphics[height=250px, width=350px]{cat1.jpg}
 % \caption{First picture, this is a kitten, not a use case diagram}
 % \label{cat1}
 \end{figure}
@@ -768,22 +773,22 @@ Use Case ID & Use Case Name & Primary Actor & Complexity & Priority \\
 
 
 \section{Project Timeline}
-% Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
+%Go back to your notes and look up a typical project development life cycle for the Waterfall approach.  How will you follow this life cycle over the remainder of this semester?  This will usually involve a chart showing your proposed timeline, with specific milestones plotted out.  Make sure you have deliverable dates from the course schedule listed, with a plan to meet them (NOTE: these are generally optimistic deadlines).
 Design: The design of the program, including interface mockups and UML's was completed by March 15. \\ \indent
 Implementation: The program all front end functionality by April 15. The back end functionality, loading data from and writing data to the databases, was functional by April 25.  \\ \indent
 Verification: We verified that the program was working as intended on April 25.
 Maintenance: The program underwent maintenance from April 25 to April 29.
 
 \section{Project Structure}
-The front end of the program is made up of a main window that provides access to various other windows each in charge of a specific function of the program. For example adding the an item to the list requires the user to navigate to the add window then enter the information about the item. The list is stored in a database. The only time the database and the front end of the program interact is when the user either logs in or exit the program. When the user logs in the list is filled with the information from the database, when the user logs out the list is written out to the database so that the updated information can be loaded next time.
-% At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
+The front end of the program is made up of a main window that provides access to various other windows each in charge of a specific function of the program. For example adding the an item to the list requires the user to navigate to the add window then enter the information about the item. The list is stored in a database, with each member of the list being stored in its own column. Each user has their own table in the database that is created when the user registers. The only time the database and the front end of the program interact is when the user either logs in or exit the program. When the user logs in the list is filled with the information from the database, when the user logs out the list is written out to the database so that the updated information can be loaded next time.
+%At first, this will be a little empty (it will need to be filled in by the time you turn in your final report).  This is your chance to discuss all of your design decisions (consider this the README's big brother).
 
 \subsection{UML Outline}
 
 % Show the full structure of your program.  Make sure to keep on updating this section as your project evolves (you often start out with one plan, but end up modifying things as you move along).  As a note, while Dia fails miserably at generating pdfs (probably my fault), I have had much success with png files.  Make sure to wrap your images in a \texttt{figure} environment, and to reference with the \texttt{ref} command.  For example, see Figure \ref{cat2}.
 
 \begin{figure}[ht!]
-\includegraphics[scale=.5]{../../../Documents/DatabaseCreation.png}
+%\includegraphics[scale=.5]{../../../Documents/DatabaseCreation.png}
 \caption{The idea of how modified databases will be implemented, such as specific databases for a library, retail store, or warehouse, using the decorator design pattern.}
 \label{UML} 
 \end{figure}
@@ -792,19 +797,17 @@ The front end of the program is made up of a main window that provides access to
 \subsection{Design Patterns Used}
 % Make sure to actually use at least 2 design patterns from this class.  This is not normally part of such documentation, but largely just specific to this class -- I want to see you use the patterns!
 \begin{description}
-\item[1] Factory method used for creation of a new user
-\item[2] Decorator pattern used to create some different types of databases with added functionality.
-\item[3] Decorator pattern used to modify the text block on the main window
-\item[4] Factory Pattern used to create new windows that create windows to the users specification. 
+\item[1] Decorator pattern used to modify the data grid on the database window. The decorator is made up of a block widget class, a block field class, a block decorator class, and a solo decorator class. The color decorator class takes a block widget as an argument, then set its internal instance of the data grid equal to the one in the widget. The color decorator then changes the color of the given data grid to the one requested by the user on the settings window.
+\item[2] Factory Pattern used to create new windows that create windows to the users specification. Each window type has its own dedicated factory, for example, addfac creates add windows. When the a instance of a factory is created, any information the factory or the window it is creating will need is passed as an argument into the factory's constructor. When build window is called a new instance of the desired window type is created, then the background color is changed to the color requested by the user on the settings window.  
 \end{description}
 
 
 \section{Results}
-The majority of the front end in functionality with all but the logout and the settings page being completed. The back end stuff is in need of a good amount of work. The front end error checking is in good condition with few exceptions.
+The first thing that was achieved was the design of the windows was completed, allowing us to see what kind of interface we needed to design our code around. All of the basic functionality, such as being able to add, modify, and remove items, was achieved early into the programs construction. Saving and loading the inventory to/from the database was implemented in the last development sprint before presentation. While all of our goals were achieved, many were harder to implement than we had anticipated. We did not have the time to implement any of our stretch goals other than the ability to change the background color of the window. The program came together fairly well, but what we ended up with changed from what we had initially designed through the development process. The interface over went a major overhaul towards the end of the development cycle, changing almost entirely from what we had initially intended it to look like. 
 % This section will start out a little vague, but it should grow as your project evolves.  With each deliverable you hand in, give me a final summary of where your project stands.  By the end, this should be a reflective section discussing how many of your original goals you managed to attain/how many desired use cases you implemented/how many extra features you added.
 
 \subsection{Future Work}
-For the front end we want to work some error checking, for example what happens if the user tries to remove an item that isn't in the inventory, and finishing up the few remaining windows. This can probably be completed by the end of next week. 
+We would like to implement more of our stretch goals, such as implementing the specialized features for retail stores and libraries. We would also like to be able for our users to upload their databases to the internet so they could access it anywhere they desire.   
 % Where are you going next with your project?
 % For early deliverables, what are your next steps?  (HINT: you will typically want to look back at your timeline and evaluate: did you meet your expected goals?  Are you ahead of schedule?  Did you decide to shift gears and implement a new feature?)
 % By the end, what do you plan on doing with this project?  Will you try to sell it?  Set it on fire?  Link to it on your resume and forget it exists?
@@ -941,8 +944,11 @@ Biography text here.
 
 % that's all folks
 
-\]
-\]
-\]
-\]
+\
+]
+\
+]
+\
+]
+$\]
 \end{document}
