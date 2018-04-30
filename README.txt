@@ -7,7 +7,7 @@ could keep track of an inventory. The main features of the program are being abl
 modify items in the user's inventory. Each item is of an object we created called database object. The
 databaseobject class contains a string to store the name, another string to store the id of the object, and
 an int to store the amount of that object that the user has. Each users inventory is loaded up into the
-TDatabase class that contains a private list of databaseobjects. TDatabase then has methods that control how
+TDatabase class that contains a private list of databaseobjects.TDatabase then has methods that control how
 the user interacts with the list. Each function of the program is controlled by its own window. For example
 if the user wants to add an item to his or her inventory they must navigate to the add window. Each window
 is built by a factory that builds it according to the specifications given by the user on the settings
